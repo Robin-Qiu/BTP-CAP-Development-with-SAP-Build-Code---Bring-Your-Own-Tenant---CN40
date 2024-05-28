@@ -1,33 +1,13 @@
 {
     "created_time": "2024-02-26T08:37:43Z",
     "files": [
-        {
-            "attachment_folder": "",
-            "created_time": "2024-02-26T09:12:47Z",
-            "id": "15",
-            "modified_time": "2024-02-26T09:13:18Z",
-            "name": "Exercise 0 - Getting Started - Preparation.md",
-            "signature": "5168684793857857039",
-            "tags": [
-            ]
-        },
-        {
-            "attachment_folder": "",
-            "created_time": "2024-02-26T09:15:33Z",
-            "id": "14",
-            "modified_time": "2024-02-26T09:16:54Z",
-            "name": "Exercise 1 - Create a Project.md",
-            "signature": "7466934429741242037",
-            "tags": [
-            ]
-        }
     ],
     "folders": [
         {
             "name": "docs"
         }
     ],
-    "id": "7",
+    "id": "666",
     "modified_time": "2024-02-26T08:37:43Z",
     "signature": "4749813615779663319",
     "version": 3
