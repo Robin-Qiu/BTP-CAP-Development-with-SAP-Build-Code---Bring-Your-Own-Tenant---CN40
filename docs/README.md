@@ -1,7 +1,13 @@
-# Build Full-Stack Applications with SAP Cloud Application Programming Model
+# SAP BTP Adoption Lab BYOT - Speed Up Clean Core Extension with BTP CAP AI based Agile Development
 ## Description
 
-This repository contains the material for the SAP TechEd 2023 session called AD161 - Build Full-Stack Applications with SAP Build Code Tools
+ThiThe purpose of the workshop is to provide a comprehensive learning experience tailored to empower participants with the practical skills and knowledge needed for effective utilization of SAP Cloud Application Programming (CAP).
+
+During the workshop, we will let you try out the hands-on on various development features to gain practical experience and will discuss about the CAP CDS, Authorization, HANA Cloud, Fiori Elements and extending S/4HANA Cloud.
+
+You will work through a set of exercises that highlight the capabilities of SAP Build Code with Joule AI copilot. Using SAP Build Code and the Joule AI copilot, you will create data entities and backend logic. 
+
+This workshop is tailored for application developers, offering the opportunity to enhance their extension development capabilities and contribute to enhance solutions within their organizations.
 
 ## Overview
 
