@@ -22,7 +22,7 @@ Please keep the following links and resources available:
 
 ## Import the S/4HANA Cloud integration destination
 
-> Download a sample destination for S/4HANA Cloud [S4HC](https://robin-qiu.github.io/SAP-BTP-Process-Automation---Workflow---Bring-Your-Own-Tenant/vx_attachments/154271525142569/S4HC ':include')  :truck::truck::truck:.
+> Download a sample destination for S/4HANA Cloud [S4HC](https://robin-qiu.github.io/BTP-CAP-Development-with-SAP-Build-Code---Bring-Your-Own-Tenant/vx_attachments/477573873607615/ADOPTION_LAB_API_BUSINESS_PARTNER ':include')  :truck::truck::truck:.
 
 2. Import the destination into your BTP subaccount.
 ![](vx_images/76056794022621.png)

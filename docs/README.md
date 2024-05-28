@@ -1,4 +1,7 @@
 # SAP BTP Adoption Lab BYOT - Speed Up Clean Core Extension with BTP CAP AI based Agile Development
+
+---
+
 ## Description
 
 ThiThe purpose of the workshop is to provide a comprehensive learning experience tailored to empower participants with the practical skills and knowledge needed for effective utilization of SAP Cloud Application Programming (CAP).
@@ -32,3 +35,9 @@ For people who missed the pre-workshop session, please refer to the recording an
 
 * Put your question in Zoom chat or unmute yourself to ask.
 * If you need remote check, please use Zoom Raise Hand function and share your screen to explain the symptom.
+
+
+
+---
+
+**Live exercises at:** https://robin-qiu.github.io/BTP-CAP-Development-with-SAP-Build-Code---Bring-Your-Own-Tenant/#/
