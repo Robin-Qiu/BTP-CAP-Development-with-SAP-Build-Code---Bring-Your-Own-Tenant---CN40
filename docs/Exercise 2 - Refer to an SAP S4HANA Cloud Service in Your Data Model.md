@@ -80,7 +80,7 @@ In the **descr** field, enter Low, Medium and High for each row respectively.
 
 Now we will import data from a file to the **A_BusinessPartner** entity.
 
-Open the ![Customers](/exercises/Ex4/csv/customers.csv ':include') :floppy_disk::floppy_disk::floppy_disk: file, and click the **Download** icon.
+Open the [Customers](https://robin-qiu.github.io/BTP-CAP-Development-with-SAP-Build-Code---Bring-Your-Own-Tenant/vx_attachments/477573873607615/customers.csv':include') :floppy_disk::floppy_disk::floppy_disk: file, and click the **Download** icon.
 
 Alternatively, using a local text editor, create a local file named `customers.csv`.<br>
 Add the following content to the file and save it locally:
@@ -99,7 +99,7 @@ The data is added.
 
 Now we will import data from a file to **Incidents** entity.
 
-Open the ![Incidents](/exercises/Ex4/csv/incidents.csv) :floppy_disk::floppy_disk::floppy_disk: file, and click the **Download** icon.
+Open the [Incidents](https://robin-qiu.github.io/BTP-CAP-Development-with-SAP-Build-Code---Bring-Your-Own-Tenant/vx_attachments/477573873607615/incidents.csv':include') :floppy_disk::floppy_disk::floppy_disk: file, and click the **Download** icon.
 
 Alternatively, using a local text editor, create a local file named `incidents.csv`.
 Add the following content to the file and save it locally:
@@ -120,7 +120,7 @@ The data is added.
 
 For the last step, we will import data from a file to the **Conversations** entity.<br>
 
-Open the ![Conversations](/exercises/Ex4/csv/conversations.csv) :floppy_disk::floppy_disk::floppy_disk: file, and click the **Download** icon.<br>
+Open the [Conversations](https://robin-qiu.github.io/BTP-CAP-Development-with-SAP-Build-Code---Bring-Your-Own-Tenant/vx_attachments/477573873607615/conversations.csv':include') :floppy_disk::floppy_disk::floppy_disk: file, and click the **Download** icon.<br>
 
 Alternatively, using a local text editor, create a local file named `conversations.csv`.<br>
 Add the following content to the file and save it locally:
