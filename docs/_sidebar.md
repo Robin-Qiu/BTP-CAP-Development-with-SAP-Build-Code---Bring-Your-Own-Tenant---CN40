@@ -19,7 +19,9 @@
 
 ---
 
-
+* [Exercise 3 - Create a List Report UI Application and Deploy to PostgreSQL on SAP BTP, hyperscaler option](Exercise%203%20-%20Create%20a%20List%20Report%20UI%20Application%20and%20Deploy%20to%20PostgreSQL%20on%20SAP%20BTP,%20hyperscaler%20option.md)
+* [Exercise 4 - Enhance Fiori Elements with UI Adaption](Exercise%204%20-%20Enhance%20Fiori%20Elements%20with%20UI%20Adaption)
+* [Exercise 5 - Add Unit Test to the Application.md](Exercise%205%20-%20Add%20Unit%20Test%20to%20the%20Application.md)
 
 
 
