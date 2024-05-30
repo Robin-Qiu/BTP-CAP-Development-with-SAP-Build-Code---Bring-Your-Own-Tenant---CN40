@@ -1,4 +1,4 @@
-# Exercise 9 - Create App with SAP Build Code and Joule copilot
+# Exercise 8 - Create App with SAP Build Code and Joule copilot
 
 ---
 
