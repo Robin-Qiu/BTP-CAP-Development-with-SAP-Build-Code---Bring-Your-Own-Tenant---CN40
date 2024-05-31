@@ -31,7 +31,12 @@
 
 ---
 
+<br>
+<br>
+
 <h2 style="text-align: center;"># Day 3 #</h2>
+
+---
 
 [Exercise 6 - Implement Roles and Authorization Checks In CAP](Exercise%206%20-%20Implement%20Roles%20and%20Authorization%20Checks%20In%20CAP.md) 
 [Exercise 7 - Integrate with SAP Build Work Zone](Exercise%207%20-%20Integrate%20with%20SAP%20Build%20Work%20Zone.md) 
