@@ -1,6 +1,6 @@
 <!-- docs/_sidebar.md -->
 
-
+![](vx_images/288853594065488.png)
 
 <h2 style="text-align: center;"># Day 1 #</h2>
 
