@@ -1,3 +1,6 @@
+<div class="draftWatermark"></div>
+
+
 # Getting Started - Preparation
 ---
 Let's start the exercise and check if everything is ready to go.

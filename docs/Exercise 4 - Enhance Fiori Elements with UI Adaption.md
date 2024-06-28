@@ -1,3 +1,5 @@
+<div class="draftWatermark"></div>
+
 # Exercise 4 - Enhance Fiori Elements with  Custom Action and Fragment
 
 

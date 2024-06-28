@@ -1,3 +1,5 @@
+<div class="draftWatermark"></div>
+
 # Exercise 7 - Integrate with SAP Build Work Zone
 ---
 

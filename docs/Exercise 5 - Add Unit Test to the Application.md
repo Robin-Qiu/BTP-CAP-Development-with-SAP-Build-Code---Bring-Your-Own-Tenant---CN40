@@ -1,3 +1,5 @@
+<div class="draftWatermark"></div>
+
 # Exercise 5 - Add Unit Test to the Application
 ---
 

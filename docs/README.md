@@ -1,3 +1,5 @@
+<div class="draftWatermark"></div>
+
 # SAP BTP Adoption Lab BYOT - Speed Up Clean Core Extension with BTP CAP AI based Agile Development
 
 ---

@@ -1,3 +1,5 @@
+<div class="draftWatermark"></div>
+
 # Exercise 6 - Implement Roles and Authorization Checks In CAP
 
 ---

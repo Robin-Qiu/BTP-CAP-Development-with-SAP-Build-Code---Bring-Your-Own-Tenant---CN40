@@ -1,4 +1,4 @@
-
+<div class="draftWatermark"></div>
 
 #  BTP Tenant Setup  
 

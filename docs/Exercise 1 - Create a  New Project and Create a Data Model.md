@@ -1,3 +1,5 @@
+<div class="draftWatermark"></div>
+
 # Exercise 1 - Create a  New Project and Create a Data Model
 ---
 In this exercise, we will create an **incident_management** project in the new low-code perspective in SAP Business Application Studio.
