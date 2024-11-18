@@ -15,6 +15,7 @@
 <br>
 <br>
 
+<!-->
 <h2 style="text-align: center;"># Day 2 #</h2>
 
 ---
@@ -44,4 +45,4 @@
 
 ---
 
-
+-->
