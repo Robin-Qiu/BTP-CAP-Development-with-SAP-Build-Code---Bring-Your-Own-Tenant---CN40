@@ -15,7 +15,7 @@
             "attachment_folder": "",
             "created_time": "2024-02-26T12:12:28Z",
             "id": "658",
-            "modified_time": "2024-06-28T08:34:11Z",
+            "modified_time": "2024-11-12T09:53:48Z",
             "name": "Exercise 1 - Create a  New Project and Create a Data Model.md",
             "signature": "5546498803300597804",
             "tags": [
@@ -25,7 +25,7 @@
             "attachment_folder": "477573873607615",
             "created_time": "2024-02-26T12:12:31Z",
             "id": "654",
-            "modified_time": "2024-06-28T08:34:05Z",
+            "modified_time": "2024-11-12T15:42:51Z",
             "name": "Exercise 0 - Getting Started - Preparation.md",
             "signature": "8223662518600237103",
             "tags": [
@@ -55,7 +55,7 @@
             "attachment_folder": "",
             "created_time": "2024-04-11T03:26:00Z",
             "id": "656",
-            "modified_time": "2024-06-28T08:34:18Z",
+            "modified_time": "2024-11-12T10:13:46Z",
             "name": "Exercise 2 - Refer to an SAP S4HANA Cloud Service in Your Data Model.md",
             "signature": "8364164805960357960",
             "tags": [
@@ -65,7 +65,7 @@
             "attachment_folder": "",
             "created_time": "2024-04-11T07:10:15Z",
             "id": "657",
-            "modified_time": "2024-06-28T08:34:24Z",
+            "modified_time": "2024-11-11T08:21:33Z",
             "name": "Exercise 3 - Create a List Report UI Application and Deploy to PostgreSQL on SAP BTP, hyperscaler option.md",
             "signature": "4203851404774182103",
             "tags": [
@@ -95,7 +95,7 @@
             "attachment_folder": "",
             "created_time": "2024-04-19T08:45:16Z",
             "id": "672",
-            "modified_time": "2024-06-28T08:35:09Z",
+            "modified_time": "2024-11-17T13:31:12Z",
             "name": "Exercise 8 - Create App with SAP Build Code and Joule copilot.md",
             "signature": "8085520616425402140",
             "tags": [
@@ -115,7 +115,7 @@
             "attachment_folder": "",
             "created_time": "2024-05-06T05:58:43Z",
             "id": "664",
-            "modified_time": "2024-06-28T08:34:31Z",
+            "modified_time": "2024-11-11T12:15:26Z",
             "name": "Exercise 4 - Enhance Fiori Elements with UI Adaption.md",
             "signature": "8416612854932205971",
             "tags": [
@@ -125,7 +125,7 @@
             "attachment_folder": "",
             "created_time": "2024-05-10T03:40:08Z",
             "id": "668",
-            "modified_time": "2024-06-28T08:33:58Z",
+            "modified_time": "2024-11-11T02:40:32Z",
             "name": "Setup for SAP BTP Adoption Lab BYOT - Speed Up Clean Core Extension with BTP CAP AI based Agile Development.md",
             "signature": "2211796421286139672",
             "tags": [

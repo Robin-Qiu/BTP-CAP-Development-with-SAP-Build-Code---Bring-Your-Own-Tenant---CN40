@@ -3,25 +3,43 @@
 # Exercise 4 - Enhance Fiori Elements with  Custom Action and Fragment
 
 
-## 0, Change the fiori to flexible layout
+#### 1. Navigate to Page Map and Change the fiori to flexible layout
 ![](vx_images/image-38.png)
 
-## 1, Add a field for entity **Conversations**
+#### 2. Open Stroyboard and add a field for entity **Conversations**
 ![](vx_images/image.png)
+
+Click **Show Details** and open **Properties** tab 
+
 ![](vx_images/image-1.png)
+
+Add a new property:
+**Name**: image
+**Type**: LargeBinary
 ![](vx_images/image-2.png)
 
-Name: image
-Type: LargeBinary
-![](vx_images/image-3.png)
 Add Annotation as the following:
-Annotation Target: Core.MediaType
-Annotation Value: application/pdf
+**Annotation Target:** Core.MediaType
+**Annotation Value: **application/pdf
+![](vx_images/image-3.png)
 
-## 2, Add Object Page for entity Conversations
+
+#### 2. Add Object Page for entity Conversations
+
+Go back to Storyboard and open PageMap
 ![](vx_images/image-4.png)
+
+Add a new Object page
+
 ![](vx_images/image-5.png)
+
+Select **Navigation** as **conversations (Conversations)**
+Click **Add**
+
 ![](vx_images/image-6.png)
+
+Edit the new page
+
 ![](vx_images/image-7.png)
 ![](vx_images/image-8.png)
 ![](vx_images/image-9.png)

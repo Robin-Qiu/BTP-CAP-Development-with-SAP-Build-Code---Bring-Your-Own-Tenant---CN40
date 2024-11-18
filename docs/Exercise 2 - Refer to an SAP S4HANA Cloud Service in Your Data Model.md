@@ -36,9 +36,9 @@ From the **Storyboard**, under **Data Models**, select an entity and click **Ope
 ![](vx_images/367782484117154.png)
 
 From the **Incidents** entity, click  the **Add Relationship** icon.<br>
-Drag the end of line of the relationship to an empty space on the canvas and click the mouse button.
 
-![](vx_images/134533916964505.png)
+
+![](vx_images/84863615669318.png)
 
 This creates a new association to a Business Partner entity. However, we don't see the Business Partner on the canvas. This is because it is in a different namespace than our own Incidents entity.
 
@@ -47,7 +47,7 @@ A new dialog appears.<br>
 2. Change the suggested **Property Name** to **customer**. <br>
 3. Leave all the other suggestions (**Association** and **To-One**) as they are, and click **Create**.
 
-![](vx_images/43290972958856.png)
+![](vx_images/96112304543482.png)
 
 You can now see the final data model:
 
@@ -71,14 +71,14 @@ We will now populate our data model with some sample data so that we can test ou
 Go to the **Storyboard** and from the **Data Models** tile, click the **Urgency** entity, and select **Add Sample Data**.<br>
 The Sample Data Editor opens.
 
-![](vx_images/233732661754306.png)
+![](vx_images/391663762569858.png)
 
-Change the **Mock Data** switch to **Off** and enter 3 as the number of rows.<br>
+
 Click **Add**.<br>
 Leave the **name** field empty.<br>
 In the **descr** field, enter Low, Medium and High for each row respectively.
 
-![](vx_images/268773366674401.png)
+![](vx_images/32702649897692.png)
 
 Now we will import data from a file to the **A_BusinessPartner** entity.
 
@@ -97,7 +97,7 @@ From the editor, select **A_BusinessPartner** and click **Import**.<br>
 From the file selection dialog box that opens, select the 'customers.csv' file that you created.<br>
 The data is added.
 
-![](vx_images/175262150656873.png)
+![](vx_images/169354683377024.png)
 
 Now we will import data from a file to **Incidents** entity.
 
@@ -118,7 +118,7 @@ From the editor, select **Incidents** and click **Import**.<br>
 From the file selection dialog box that opens, select the 'incidents.csv' file that you created.<br>
 The data is added.
 
-![](vx_images/573743529808339.png)
+![](vx_images/36722720545199.png)
 
 For the last step, we will import data from a file to the **Conversations** entity.<br>
 
@@ -139,7 +139,7 @@ From the editor, select **Conversations** and click **Import**.<br>
 From the file selection dialog box that opens, select the 'conversations.csv' file that you created.<br>
 The data is added.
 
-![](vx_images/256062509682978.png)
+![](vx_images/455493254271249.png)
 
 ## Summary
 

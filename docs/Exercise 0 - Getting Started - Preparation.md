@@ -20,7 +20,7 @@ Please keep the following links and resources available:
 
 1. Please subscribe the required BTP services before your hands-on exercises: [Setup Guide](https://dam.sap.com/mac/u/a/C5HSPyJ.htm?rc=10&doi=SAP1080426)
 
-![](vx_images/321754508635412.png)
+![](vx_images/501266288117740.png)
 
 
 ## Import the S/4HANA Cloud integration destination
@@ -33,3 +33,7 @@ Please keep the following links and resources available:
 3. The credential will be supplied during the adoption lab hands-on session.
 
 ![](vx_images/305616256262898.png)
+
+4. If you try to "**Check Connection"**, then you will get **"200: OK"** message and this is a normal feedback.
+
+![](vx_images/433437007921942.png)

@@ -12,7 +12,7 @@ A login page is opened, enter the credentials provided to you for the session.
 You should see the central entry point for SAP Build development in SAP BTP.
 
 The "lobby" may already contain multiple projects created in this account.
-![](vx_images/503451932961163.png)
+![](vx_images/164712889910152.png)
 
 Click **Create** and select the **Build an Application** tile. 
 
@@ -42,7 +42,7 @@ Confirm by clicking **Create**.
 The project creation may last 2-3 minutes.
 
 
-![](vx_images/146682396909567.png)
+![](vx_images/128621518596794.png)
 
 From the list of projects, select **incident_managementXXX** and navigate to the storyboard in SAP Business Application Studio.
 ![](vx_images/315271025596209.png)
@@ -69,7 +69,7 @@ In the following exercise, we will use the new high productivity tools in SAP Bu
 
 ##### Import CodeList to the Data Model
 
-In the storyboard, click on the **+** button under the **Data Models** tile, and input the **Namespace** ( ie.: **iac_adoptionlab**** ). click **Create** to open the CDS Graphical Modeler.
+In the storyboard, click on the **+** button under the **Data Models** tile, and input the **Namespace** ( ie.: **iac_adoptionlab** ). click **Create** to open the CDS Graphical Modeler.
 ![](vx_images/545591882827217.png)
 From the CDS Graphical Modeler editor's **double click** on the empty canvas, or from the top right toolbar click on the **Open Property Sheet** icon.
 ![](vx_images/27463514921357.png)
@@ -174,7 +174,7 @@ In the UrgencyCode editor, click the **Properties** tab.
     
 The UrgencyCode entity is updated with the new properties.
 
-![](vx_images/141341738096349.png)
+![](vx_images/333234217143272.png)
 
 ##### Add the Urgency Entity
 Create the Urgency entity based on the UrgencyCode Enum, and add the CodeList aspect.
@@ -226,21 +226,21 @@ In the dialog box, fill in the following values:
    
 The Incidents entity is updated with the new relationship to Conversations.
 
-![](vx_images/354701604732446.png)
+![](vx_images/539774665957616.png)
 
-1. Select the Incidents entity and click the **Add Relationship** icon.
+1. Select the **Incidents** entity and click the **Add Relationship** icon.
 2. An arrow appears. Drag the arrow to the **Urgency** entity.
 The **New Relationship** dialog box opens.
 In the dialog box, fill in the following values:
    1. For **Type**, select **Association**.
    2. For **Multiplicity**, select **To-One**.
-   3. **IMPORTANT**: for  **Direction** select **Unidirectional**.
+   3. For **Backlink Property**, set it as **blank**.
    4. For the rest of the fields, leave the default values.
    5. Click **Create**.
    
 The Incidents entity is updated with the new relationship to Urgency.
 
-![](vx_images/6932794298014.png)
+![](vx_images/552713752168905.png)
 
 
 ## Summary

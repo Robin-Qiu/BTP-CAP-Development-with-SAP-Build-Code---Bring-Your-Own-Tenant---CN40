@@ -303,17 +303,23 @@ Expand the **Deploy** section, select **Deploy incident_managementXXX**, and the
 
 A build starts and the **Cloud Foundry Sign In and Targets editor** opens.
 
-- Enter the following Cloud Foundry endpoint **https://api.cf.eu10-004.hana.ondemand.com** .<br>
+- Copy your Cloud Foundry **endpoint** under Subaccount General info.<br>
+
+![](vx_images/413587991023206.png)
+
   **Important**: Sometimes, the system recommends the **https://api.cf.eu10.hana.ondemand.com** URL. Make sure you manually enter the **-004** part behind **eu10**.<br>
 
+You can choose **Credentials** or **SSO Passcode** to validate your access.
+
+The following will take SSO Passcode as an example:
 - Choose **SSO Passcode** as the authentication method.<br>
 
 - Press the **Open a new browser page to generate your SSO passcode** link.<be>
 
 ![](vx_images/173655056885563.png)
 
-- Next, provide the value **lcap-platform** and choose **Sign in with Alternative Identity Provider**.
-![](vx_images/347285589157171.png)
+- Next, if your BTP has **customized IAS**, you should use **Sign in with Alternative Identity Provider**.
+![](vx_images/535370954263483.png)
 
 This opens a new page, with a temporary passcode created for your user.
 
@@ -337,9 +343,11 @@ In this page:
 The deployment starts and progress can be tracked in the Terminal.
 It takes **several minutes** for the application to be deployed.
 
-Since the default deployed database is HANA Cloud, it will fail to deploy the application with the message like this:
+Since the default deployed database is HANA Cloud, if you have no HANA Cloud instance it will fail to deploy the application with the message like this:
 
 ![](vx_images/557884004970729.png)
+
+<mark>Don't worry, we won't use HANA Cloud in our exercises.</mark>
 
 #### In our exercise, we will modify the deploy configuration files to switch the database to PostgreSQL on SAP BTP, hyperscaler option.
 
@@ -359,8 +367,8 @@ It will add some new configurations with PostgreSQL like below.
 
 2. Remove HANA Cloud related configurations.
 
-In **package.json** file, delete **hdb** and **@sap/cds-hana** from the **dependencies** part.
-![](vx_images/440794672261215.png)
+In **package.json** file, delete **hdb** and **@cap-js/hana** from the **dependencies** part.
+![](vx_images/260812831178296.png)
 
 
 Change the CDS database configuration.
@@ -376,7 +384,7 @@ Change the CDS database configuration.
 
 In the mta.yaml file, delete HANA Cloud related configurations
 
-Unser **resources** part, remove "**incident_managementXXX-service-db"** block
+Under **resources** part, remove "**incident_managementXXX-service-db"** block
 
 ![](vx_images/503827120304181.png)
 
