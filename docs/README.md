@@ -19,7 +19,7 @@ This workshop is tailored for application developers, offering the opportunity t
 ### Exercise Overview
 In this session, you will learn how to use SAP Build Code with SAP Business Application Studio to develop apps rapidly on the SAP Business Technology Platform (SAP BTP). You will learn how to build a full-blown CRUD application, including backend services and a UI application in a matter of minutes, using only visual editors. You will connect the application to an SAP S/4HANA API. You will learn how to easily switch to code, and continue working from there to create additional business logic for your service to finally make the application available on BTP with a "one-click deployment".
 
-![](vx_images/321754508635412.png)
+![](vx_images/501266288117740.png)
 
 ### Use Case
 
@@ -28,8 +28,8 @@ In this adoption lab, we will create an application for Incident Management. To 
 ## Requirements
 
 For people who missed the pre-workshop session, please refer to the recording and deck for the rules & preparation:
-* **Recording**: https://dam.sap.com/mac/u/a/qHyW4xD.htm?rc=10&doi=SAP1081762
-* **Deck**:  https://dam.sap.com/mac/u/a/TPvxbMV.htm?rc=10&doi=SAP1081763
+* **Recording**: https://dam.sap.com/mac/u/a/bUVjThW?rc=10&doi=SAP1142877
+* **Deck**:  https://dam.sap.com/mac/u/a/AwbECov?rc=10&doi=SAP1142879
 * **Setup guide**: https://dam.sap.com/mac/u/a/C5HSPyJ.htm?rc=10&doi=SAP1080426
 
 
