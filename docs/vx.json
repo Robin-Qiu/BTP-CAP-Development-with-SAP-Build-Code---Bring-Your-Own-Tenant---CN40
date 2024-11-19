@@ -95,7 +95,7 @@
             "attachment_folder": "",
             "created_time": "2024-04-19T08:45:16Z",
             "id": "672",
-            "modified_time": "2024-11-17T13:31:12Z",
+            "modified_time": "2024-11-19T12:24:20Z",
             "name": "Exercise 8 - Create App with SAP Build Code and Joule copilot.md",
             "signature": "8085520616425402140",
             "tags": [
@@ -138,6 +138,16 @@
             "modified_time": "2024-06-28T08:34:42Z",
             "name": "Exercise 6 - Implement Roles and Authorization Checks In CAP.md",
             "signature": "7368913268780523410",
+            "tags": [
+            ]
+        },
+        {
+            "attachment_folder": "",
+            "created_time": "2024-04-19T08:45:16Z",
+            "id": "691",
+            "modified_time": "2024-11-19T11:41:50Z",
+            "name": "Exercise 8 - Create App with SAP Build Code and Joule copilot_backup.md",
+            "signature": "1395245223331529510",
             "tags": [
             ]
         }
