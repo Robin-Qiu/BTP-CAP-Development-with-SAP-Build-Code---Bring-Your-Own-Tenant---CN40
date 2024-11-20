@@ -134,19 +134,19 @@ Fragment Name: PdfViewerFrag
 ```
 
 <core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:macros="sap.fe.macros">
-<ScrollContainer id="_IDGenScrollContainer1"
-		height="100%"
-		width="100%"
-		horizontal="true"
-		vertical="true" visible="{pdfview>/Viewshow}">
-		<FlexBox id="_IDGenFlexBox1" direction="Column" renderType="Div" class="sapUiSmallMargin">
-			<PDFViewer id="_IDGenPDFViewer1" source="{pdf>/Source}"  title="{pdf>/Title}" height="{pdf>/Height}" isTrustedSource="true">
-				<layoutData>
-					<FlexItemData id="_IDGenFlexItemData1" growFactor="1" />
-				</layoutData>
-			</PDFViewer>
-		</FlexBox>
-	</ScrollContainer>
+    <ScrollContainer id="_IDGenScrollContainer1"
+        height="100%"
+        width="100%"
+        horizontal="true"
+        vertical="true" visible="{pdfview>/Viewshow}">
+        <FlexBox id="_IDGenFlexBox1" direction="Column" renderType="Div" class="sapUiSmallMargin">
+            <PDFViewer id="_IDGenPDFViewer1" source="{pdf>/Source}" isTrustedSource="true" displayType ="Embedded" title="{pdf>/Title}" height="{pdf>/Height}" >
+                <layoutData>
+                    <FlexItemData id="_IDGenFlexItemData1" growFactor="1" />
+                </layoutData>
+            </PDFViewer>
+        </FlexBox>
+    </ScrollContainer>
 </core:FragmentDefinition>
 
 ```
