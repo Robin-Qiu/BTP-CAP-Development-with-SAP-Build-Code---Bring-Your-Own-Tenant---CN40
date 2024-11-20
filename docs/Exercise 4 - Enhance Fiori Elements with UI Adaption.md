@@ -140,7 +140,7 @@ Fragment Name: PdfViewerFrag
 		horizontal="true"
 		vertical="true" visible="{pdfview>/Viewshow}">
 		<FlexBox id="_IDGenFlexBox1" direction="Column" renderType="Div" class="sapUiSmallMargin">
-			<PDFViewer id="_IDGenPDFViewer1" source="{pdf>/Source}"  title="{pdf>/Title}" height="{pdf>/Height}" >
+			<PDFViewer id="_IDGenPDFViewer1" source="{pdf>/Source}"  title="{pdf>/Title}" height="{pdf>/Height}" isTrustedSource="true">
 				<layoutData>
 					<FlexItemData id="_IDGenFlexItemData1" growFactor="1" />
 				</layoutData>
