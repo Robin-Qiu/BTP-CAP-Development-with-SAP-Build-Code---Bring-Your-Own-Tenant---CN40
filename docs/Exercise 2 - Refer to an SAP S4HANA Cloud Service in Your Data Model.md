@@ -97,7 +97,7 @@ From the editor, select **A_BusinessPartner** and click **Import**.<br>
 From the file selection dialog box that opens, select the 'customers.csv' file that you created.<br>
 The data is added.
 
-![](vx_images/169354683377024.png)
+![](vx_images/441683903048179.png)
 
 Now we will import data from a file to **Incidents** entity.
 
