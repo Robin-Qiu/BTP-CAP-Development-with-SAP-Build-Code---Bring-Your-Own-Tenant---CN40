@@ -1,6 +1,6 @@
 <div class="draftWatermark"></div>
 
-# 使用SAP云应用编程（CAP）和Joule AI开发人员助手加速清洁核心扩展的BYOT SAP BTP采用实验室
+# 使用SAP云应用编程（CAP）加速清洁核心扩展的 SAP BTP 动手实验室
 
 ---
 
@@ -10,7 +10,7 @@
 
 在研讨会上，我们将让参与者尝试各种开发功能以获得实践经验，并讨论CAP CDS、授权、HANA云和Fiori元素以及扩展S/4HANA云。
 
-通过一系列练习，您将了解如何使用SAP Build Code和Joule AI开发人员助手创建数据实体和后端逻辑。
+通过一系列练习，您将了解如何使用 SAP Business Application Studio / SAP Build Code开发人员助手创建数据实体和后端逻辑。
 
 本次研讨会专为应用开发人员设计，旨在提高其扩展开发能力，并贡献于组织内的解决方案改进。
 
@@ -19,7 +19,7 @@
 ### 练习概述
 在本节中，您将学习如何使用SAP Build Code和SAP Business Application Studio在SAP Business Technology Platform（BTP）上快速开发应用。您将学习如何几分钟内构建一个完整功能的CRUD（创建、读取、更新和删除）应用，包括后端服务和UI应用，只需使用可视化编辑器。您将连接应用到SAP S/4HANA API，学习如何轻松切换至代码并在此基础上创建额外的业务逻辑以最终在BTP上一键部署应用。
 
-![](vx_images/501266288117740.png)
+![](vx_images/1272923603339.png)
 
 ### 用例
 
