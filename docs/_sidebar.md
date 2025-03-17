@@ -38,6 +38,6 @@
 
 * [练习6 - 在CAP中实现角色和授权检查](Exercise%206%20-%20Implement%20Roles%20and%20Authorization%20Checks%20In%20CAP.md) 
 * [练习7 - 与SAP Build Work Zone集成](Exercise%207%20-%20Integrate%20with%20SAP%20Build%20Work%20Zone.md) 
-* [练习8 - 使用SAP Build Code和Joule copilot创建应用](Exercise%208%20-%20Create%20App%20with%20SAP%20Build%20Code%20and%20Joule%20copilot.md) 
-
+<!-- * [练习8 - 使用SAP Build Code和Joule copilot创建应用](Exercise%208%20-%20Create%20App%20with%20SAP%20Build%20Code%20and%20Joule%20copilot.md) 
+-->
 ---
