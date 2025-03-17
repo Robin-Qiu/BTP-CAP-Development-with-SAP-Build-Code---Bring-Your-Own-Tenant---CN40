@@ -6,19 +6,19 @@
 
 在本练习中，我们将添加SAP S/4HANA Cloud服务Business Partner到项目，并将其关联至我们的事件管理模型。
 
-![](vx_images/325096176622878_1.png)
+![](vx_images/22865287564509.png)
 
-![](vx_images/180396878915669_1.png)
+![](vx_images/441613060729298.png)
 
 ##### 发现并添加SAP S/4HANA Cloud服务到数据模型中
 
-从**Storyboard**标签页，点击外部资源图标上的"+"按钮。这将打开左侧的**“服务中心”**。
+1. 从**Storyboard**标签页，点击外部资源图标上的"+"按钮。这将打开左侧的**“服务中心”**。
 
 ![](vx_images/593987854808584.png)
 
-在“服务中心”中，你可以看到"SAP系统"节点。技术上来说，它包含了管理员为你在后端系统中设置的OData服务的目的地。这些服务可以来自SAP S/4HANA系统或者其他SAP后端系统。
+2. 在“服务中心”中，你可以看到"SAP系统"节点。技术上来说，它包含了管理员为你在后端系统中设置的OData服务的目的地。这些服务可以来自SAP S/4HANA系统或者其他SAP后端系统。
 
-展开**SAP System > lcapiac_adoptionlab**, 并选择 **ADOPTION_LAB_API_BUSINESS_PARTNER**。
+3. 展开**SAP System > lcapiac_adoptionlab**, 并选择 **ADOPTION_LAB_API_BUSINESS_PARTNER**。
 
 现在你可以看到所选服务的详细信息，包括实体、每个实体的属性以及关于服务的一般数据。
 
@@ -28,39 +28,40 @@
 
 ![](vx_images/49961542591782.png)
 
-选择目标项目，将服务添加到你的 CAP 项目中
+4. 选择目标项目，将服务添加到你的 CAP 项目中
 ![](vx_images/45505314703054.png)
-返回到**Storyboard**标签页。几秒钟后，新的服务将在“外部资源”图标中显示。
+5. 返回到**Storyboard**标签页。几秒钟后，新的服务将在“外部资源”图标中显示。
 
 ![](vx_images/485882600201697.png)
 
 ##### 将业务伙伴实体关联至事件管理实体
 
-从**Storyboard**, 在数据模型下选择一个实体，并点击“以图形建模器打开”以便回到图形化编辑界面。
+1. 从**Storyboard**, 在数据模型下选择一个实体，并点击“以图形建模器打开”以便回到图形化编辑界面。
 
 ![](vx_images/359863740274466.png)
 
-将OData Service的元数据导入
+2. 将OData Service的元数据导入
 ![](vx_images/419995379020466.png)
 
 ![](vx_images/388815178194046.png)
 
-选择 A_BusinessPartner实体
+3. 选择 A_BusinessPartner实体
 ![](vx_images/412734549843368.png)
 
-从“事件”实体中，点击添加关系图标。
+4. 从“事件”实体中，点击添加关系图标。
 ![](vx_images/474593989098770.png)
 
-这将创建一个新的关联至业务伙伴实体。然而，在画布上你并没有看到业务伙伴实体，这是因为它的命名空间不同于我们的事件实体。
+5. 这将创建一个新的关联至业务伙伴实体。然而，在画布上你并没有看到业务伙伴实体，这是因为它的命名空间不同于我们的事件实体。
 
-新的对话框出现。
+**新的对话框出现。**
+
 1. 从目标实体下拉列表中选择**API_BUSINESS_PARTNER-A_BusinessPartner**。
-2. 将建议的属性名称改为**customer**。
-3. 确保所有其他建议（Association和To-One）不变，并点击“创建”。
+1. 将建议的属性名称改为**customer**。
+1. 确保所有其他建议（Association和To-One）不变，并点击“创建”。
 
 ![](vx_images/518014651964712.png)
 
-此时，你可以看到最后的数据模型：
+4. 此时，你可以看到最后的数据模型：
 ![](vx_images/397136985993171.png)
 
 ## 总结
@@ -75,12 +76,12 @@
 - 固定值，是应用程序的一部分，并应该在部署时一同部署。示例：如果没有固定的一套紧急程度，则使用固定的值。
 - 示例数据，仅用于测试你创建的服务和应用程序，并不应包含在生产部署中。
 
-在根目录下创建“/test/data”文件夹，同时创建4个CSV文件：**iac_adoptionlab-Conversations.csv**，**iac_adoptionlab-Customers.csv**，**iac_adoptionlab-Incidents.csv**，**iac_adoptionlab-Urgency.csv**
-![](vx_images/503902678831672.png)
+1. 在根目录下创建“/test/data”文件夹，同时创建4个CSV文件：**iac_adoptionlab-Conversations.csv**，**ADOPTION_LAB_API_BUSINESS_PARTNER-A_BusinessPartner.csv**，**iac_adoptionlab-Incidents.csv**，**iac_adoptionlab-Urgency.csv**
+![](vx_images/387159283965198.png)
 
 示例数据编辑器打开。
 
-在“descr”字段中，分别为每一行输入Low, Medium和High。
+2. 在“descr”字段中，分别为每一行输入Low, Medium和High。
 
 ```
 code,name,descr
@@ -95,9 +96,9 @@ H,High,High
 
 
 
-现在我们将从一个文件导入数据至**A_BusinessPartner**实体。
+3. 现在我们将从一个文件导入数据至**A_BusinessPartner**实体。
 
-打开 `iac_adoptionlab-Customers.csv`，使用本地文本编辑器。
+4. 打开 `ADOPTION_LAB_API_BUSINESS_PARTNER-A_BusinessPartner.csv`，使用本地文本编辑器。
 将以下内容添加到文件中并保存：
 ```
 BusinessPartner,FirstName,LastName
@@ -106,12 +107,11 @@ BusinessPartner,FirstName,LastName
 1001039,Sunny,Sunshine
 ```
 
-![](vx_images/454118547008104.png)
+![](vx_images/357839943220629.png)
 
 
-![](vx_images/441683903048179_1.png)
 
-现在我们将从文件导入数据至**Incidents**实体。
+5. 现在我们将从文件导入数据至**Incidents**实体。
 
 
 用本地文本编辑器，创建一个名为`iac_adoptionlab-Incidents.csv`的本地文件。
@@ -130,7 +130,7 @@ ID,title,urgency_code,customer_BusinessPartner
 最后一步，我们将从文件导入数据至**Conversations**实体。
 
 
-用本地文本编辑器，创建一个名为`iac_adoptionlab-Conversations.csv`的本地文件。
+6. 用本地文本编辑器，创建一个名为`iac_adoptionlab-Conversations.csv`的本地文件。
 将以下内容添加到文件中并保存：
 ```
 ID,incidents_ID,timestamp,author,message
@@ -157,19 +157,19 @@ ID,incidents_ID,timestamp,author,message
 
 我们将添加4个实体至服务中：Customers（客户）、Incidents（事件）、Conversations（对话）以及Urgency（紧急程度）。
 
-回到SAP Business Application Studio中的**Storyboard标签页。**
+1. 回到SAP Business Application Studio中的**Storyboard标签页。**
 
-在Storyboard中，从服务图标上点击“+”按钮，并输入服务名称为**Processor**。
+2. 在Storyboard中，从服务图标上点击“+”按钮，并输入服务名称为**Processor**。
 
 
 ![](vx_images/26137781091183.png)
 
-CDS图形建模器打开。
+3. CDS图形建模器打开。
 ![](vx_images/451046397351505.png)
 
 
 
-从工具栏中点击“添加实体”并选择“Entity1”。
+4. 从工具栏中点击“添加实体”并选择“Entity1”。
 
 **新投影对话框打开**
 
@@ -177,19 +177,19 @@ CDS图形建模器打开。
 
 ![](vx_images/17286209104876.png)
 
-Incidents实体出现在CDS图形建模器中。
+5. Incidents实体出现在CDS图形建模器中。
 
 ![](vx_images/207859500782981.png)
 
-点击“打开属性表”图标，并导入S/4HANA Cloud OData服务。
+6. 点击“打开属性表”图标，并导入S/4HANA Cloud OData服务。
 
 ![](vx_images/127021618144640.png)
 
-浏览OData CDS文件。
+7. 浏览OData CDS文件。
 
 ![](vx_images/127424188057467.png)
 
-选择A_BusinessPartner实体。
+8. 选择A_BusinessPartner实体。
 
 ![](vx_images/312584391425553.png)
 
@@ -214,12 +214,12 @@ A_BusinessPartner实体出现在CDS图形建模器中。
 
 **新投影对话框打开**
 
-选择iac_adoptionlab.Conversations实体，并清除“启用草稿编辑”复选框，点击确定。
+1. 选择iac_adoptionlab.Conversations实体，并清除“启用草稿编辑”复选框，点击确定。
 Conversations实体出现在CDS图形建模器中。
 
 ![](vx_images/171815496059394.png)
 
-从工具栏中点击“Add Projection”。
+2. 从工具栏中点击“Add Projection”。
 
 **新投影对话框打开**
 
@@ -228,7 +228,7 @@ Urgency实体出现在CDS图形建模器中。
 
 ![](vx_images/147472868394791.png)
 
-确认ProcessorService包含你刚刚添加的4个实体。
+3. 确认ProcessorService包含你刚刚添加的4个实体。
 
 ![](vx_images/260634387480200.png)
 
@@ -244,42 +244,42 @@ Urgency实体出现在CDS图形建模器中。
 
 ##### 使用示例数据预览
 
-<mark>打开 package.json 文件，将cds.auth该为**“dummy”**。</mark>
+1. <mark>打开 package.json 文件，将cds.auth该为**“dummy”**。</mark>
 ![](vx_images/570351660575169.png)
 
-从左侧的活动栏点击“运行配置”图标。这个视图打开。
+2. 从左侧的活动栏点击“运行配置”图标。这个视图打开。
 点击 “Create Configuration”，选择你的项目
 ![](vx_images/329141569477902.png)
 
-确认运行配置的名称
+3. 确认运行配置的名称
 ![](vx_images/420842251091198.png)
 
-点击默认的运行配置：**运行 incident_managementXXX-1**。
+4. 点击默认的运行配置：**运行 incident_managementXXX-1**。
 在打开的OData部分中，示例数据被选中。
 
 从“运行配置”视图点击“运行模块图标”。
 ![](vx_images/493215417735074.png)
 
-等待看到像下面的控制台输出为止：
+5. 等待看到像下面的控制台输出为止：
 
 ![](vx_images/30136006762873.png)
 
-如果你的浏览器阻止了弹出窗口，请根据如下步骤解除：
+6. 如果你的浏览器阻止了弹出窗口，请根据如下步骤解除：
 
 ![](vx_images/299246633708383.png)
 
-几秒钟后，一个新的浏览器标签页打开，并显示如下的屏幕
+7. 几秒钟后，一个新的浏览器标签页打开，并显示如下的屏幕
 
 > 注意：如果没有新的标签，请检查是否在你的浏览器中运行了阻止器。如果是，允许SAP Business Application Studio域打开一个新的标签。
 
 ![](vx_images/355632050704980.png)
 
-你可以在服务列表右侧看到包括**ProcessorService**在内的服务预览。
-从“Incidents”行，点击“以代码形式查看”的图标来预览带有示例数据的客户列表。
+8. 你可以在服务列表右侧看到包括**ProcessorService**在内的服务预览。
+从**Incidents**行，点击“以代码形式查看”的图标来预览带有示例数据的客户列表。
 客户样本数据显示出来，
 使用OData V4查询和暴露数据。请注意，这个服务从内存数据库读取数据（在预览时自动开启），因此任何对数据的更改都不会保留。
 ![](vx_images/70202457115280.png)
-
+<!--
 ##### 使用实时数据预览
 
 切换回显示你的项目的SAP Business Application Studio标签页。
@@ -314,3 +314,4 @@ Urgency实体出现在CDS图形建模器中。
 
 ##### 总结
 我们现在已经无需部署服务就进行了预览。
+--.
