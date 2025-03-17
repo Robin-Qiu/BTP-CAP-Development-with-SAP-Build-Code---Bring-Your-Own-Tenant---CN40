@@ -1,6 +1,6 @@
 <div class="draftWatermark"></div>
 
-# 练习3 - 创建列表报告UI应用并部署到SAP BTP上的PostgreSQL（超大规模选项）
+# 练习3 - 创建列表报告UI应用并部署到SAP BTP上的 HANA Cloud / PostgreSQL（超大规模选项）
 
 ---
 
