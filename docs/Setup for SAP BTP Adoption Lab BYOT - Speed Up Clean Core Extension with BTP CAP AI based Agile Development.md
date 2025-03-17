@@ -1,60 +1,69 @@
 <div class="draftWatermark"></div>
 
-#  BTP Tenant Setup  
+# SAP BTP 练习环境
 
-###### *SAP BTP Adoption Lab BYOT - Speed Up Clean Core Extension with BTP CAP AI based Agile Development*
+* **【默认】动手练习需要在贵公司的 BTP 开发环境进行**
+* *【可选】申请 [SAP BTP 试用环境](https://www.sap.cn/products/technology-platform/trial.html)*
+
 
 ---
 
-# Setup SAP Build Code in SAP BTP
-<!-- description --> SAP Build Code provides generative AI-based code development with Joule copilot, optimized for Java and JavaScript application development. It offers a turn-key environment for coding, testing, integrations, and application lifecycle management.
+# SAP BTP 租户设置
 
-Perform these preparatory steps to set up your system for creating your business applications in SAP Build Code.
+###### *SAP BTP 自带实验-用BTP CAP 敏捷开发加速Clean Core扩展*
 
+---
 
+### 在SAP BTP中设置 SAP Build Code
 
-### Run the SAP Build Code Booster
+<!-- description --> SAP Build Code 使用 Joule 伴随程序提供了生成式 AI 基础的代码开发，针对 Java 和 JavaScript 应用程序开发进行了优化。它提供了一个一站式环境来进行编码、测试、集成和应用程序生命周期管理。
 
->**Note** This tutorial assumes that you are using an SAP BTP Trial account. If you are using a different account, some steps might be different.
-
-1. Access your **BTP global account**.
-
+执行以下预备步骤以设置您的系统，以便在 SAP Build Code 中创建业务应用程序。
 
 
-2. In the navigation pane, click **Boosters**. 
+### 运行 SAP Build Code 加速器
+
+>**注意：**此教程假设您正在使用 SAP BTP 试用帐户。如果您使用的是不同账户，某些步骤可能会有所不同。
+
+1. 访问您的**BTP 全局帐户**。
+
+
+
+2. 在导航窗格中，点击 **加速器**。 
 
 ![](vx_images/444780737080953.png)
     
-3. Search for **SAP Build Code**.
+3. 搜索**SAP Build Code**。
    
 ![](vx_images/80052650396272.png)
 
-    >There is a booster for each of the SAP Build Code service plans. Make sure to select the one relevant to the plan you want to work in.
+    >每个 SAP Build Code 服务计划都有一个加速器。请确保选择与您要使用的服务计划相关的那个。
     
-4. Open the booster to see the overview, components, and additional resources, and click **Start**.
+4. 打开加速器以查看概述、组件和附加资源，然后点击 **开始**。
 
    
 ![](vx_images/396941760708001.png)
 
-    The booster checks for required authorizations, compatible providers, and regions, as prerequisites for successful execution.
+    加速器会检查所需权限、兼容提供者和地区，以确保成功执行的先决条件。
 
-5. After running the booster, in the popup window, click **Navigate to Subaccount**.
+5. 运行加速器后，在弹出窗口中点击 **导航至子帐户**。
     
 ![](vx_images/14361096151266.png)
 
 
-### Verify Subscription
-1. From the navigation pane, select **Services** > **Instances and Subscriptions**.
+### 验证订阅
+
+1. 在导航窗格中选择 **服务** > **实例和订阅**。
    
 ![](vx_images/363271831953423.png)
 
-2. Make sure you are subscribed to SAP Business Application Studio and to SAP Build Code. 
+2. 确保您订阅了 SAP 商务应用工作室和 SAP Build Code。 
 
 ![](vx_images/549782505836237.png)
 
-3. Click **SAP Build Code**.
+3. 点击 **SAP Build Code**。
 
-    The SAP Build lobby opens.
+    SAP Build 前台将打开。
 
 ![](vx_images/205261520866075.png)
 
@@ -62,108 +71,96 @@ Perform these preparatory steps to set up your system for creating your business
 
 ---
 
-# Set Up SAP Build Work Zone, standard edition
+# 设置 SAP Build 工作区域，标准版
 
-## Subscribe to the services
+## 订阅服务
 
-Before you can access and use the SAP Build Work Zone, standard edition services, you first need to subscribe to them.
+在能够访问和使用 SAP Build Work Zone 标准版服务之前，您需要首先订阅这些服务。
 
-
-1. Click **Services** in the left navigation panel and choose **Instances and Subscriptions**.
+1. 点击左侧导航面板中的 **服务** 并选择 **实例和订阅**。
 
 ![](vx_images/109372357359209.png)
 
-Here we can see all of the service instances and subscriptions that have been created for the subaccount. Currently there are none. 
-Let's change that. 
+在这里可以查看为子帐户创建的所有服务实例和订阅。当前没有，让我们改变这一状况。
 
-2. Click on the **Create** button on the top right hand side of the UI. 
+2. 点击 UI 右上角的 **创建** 按钮。 
 
    ![](vx_images/522672094363071.png)
     
-3. In the popover that appears use the dropdown available for the "Service" field and choose **SAP Build Work Zone, standard edition** (1). In the plan field select **standard** (2). This allows us to create and configure sites for centralised access to our applications. 
-Hit the create button (3). 
+3. 在出现的弹出窗口中，使用“服务”字段下的下拉菜单选择 **SAP Build Work Zone 标准版** (1)。在计划字段中选择 **标准** (2)，这允许我们创建和配置集中访问应用程序的站点。点击生成按钮（3）。
 
-![](vx_images/183443031106737.png)
+   ![](vx_images/183443031106737.png)
    
+> ℹ️ 注意：如果您希望使用 API 将此服务与其他服务（例如云传输管理服务）集成，标准计划的实例类型将为此使用，但不用担心当前情况。
+   
+成功创建后，在驾驶舱中可以看到新的订阅。
 
-> ℹ️ Note: The instance type for plan **standard** will be required if you wish to use APIs to integrate with other services such as Cloud Transport Management Service for example, but don't worry about this for now.
+   ![](vx_images/492213712175447.png)
 
-Once the creation process has finished successfully, you will see the new subscription in the cockpit. 
+您将在右上角看到一个“前往应用程序”的按钮。
+   ![](vx_images/76722148478743.png)
 
-![](vx_images/492213712175447.png)
+所有 SAP BTP 服务都带有一组角色，包括必须分配给用户的管理权限。在 SAP Build Work Zone 的情况下，我们需要将其分配给 `Launchpad_Admin` 角色。在此步骤中，您将自己分配到该角色以便可以访问服务并执行管理任务。
 
-You will see button in the top right hand corner **Go to Application**. 
-![](vx_images/76722148478743.png)
+4. 从侧面菜单中选择 **安全 > 角色组**。
 
+   ![](vx_images/77273390826818.png)
+       
+在这里，可以通过开始键入 Launchpad 来查找 `Launchpad_Admin` 角色组或简单地从列表中选择它。 
 
+   ![](vx_images/55892689667477.png)
+       
+点击行项目（或行项目的箭头）以展开角色组详情窗格。
 
-All SAP BTP services come with role collections, including administrative permissions which must be assigned to our users. In the case of SAP Build Work Zone we will need to assigned to the `Launchpad_Admin` role. In this step, you'll assign yourself to this role so that you can access the service and carry out administrative tasks.
+   ![](vx_images/248693960116889.png)
 
-4. Select **Security > Role Collections** from the side menu.
+这里可以看到更多关于角色组的详情：该集合包含的角色、已分配到该角色组的用户以及为此角色组创建的任何用户群或属性映射。
+点击窗格顶部的 **编辑** 按钮。
 
-![](vx_images/77273390826818.png)
-    
-Here we can either use the search field and start typing Launchpad to find the `Launchpad_Admin` role collection or we can simply select it from the list. 
-    
-![](vx_images/55892689667477.png)
-    
- Click on the line item (or the arrow at the end of the line item) to expand the role collection details pane.
+   ![](vx_images/278002085692515.png)
 
- ![](vx_images/248693960116889.png)
+现在我们已将 `Launchpad_Admin` 角色组分配给我们的培训用户，并且可以访问 SAP Build Work Zone 标准版并执行所有管理任务。让我们访问该应用程序。
 
-Here we see more detail about the role collection: the roles that the collection includes, the users who have been assigned to the role collection and any user groups and attribute mappings that have been created foe this role collection.
-Click the **Edit** button at the top of the panel (see image above). 
+6. 从侧面面板中点击 **服务** 然后选择 **实例和订阅**。
+在订阅标签下，我们可以看到我们之前创建的 SAP Build Work Zone 标准版订阅。现在可以点击可用链接 **SAP Build Work Zone，标准版** 或者进入详细信息视图时点击右侧的 **前往应用程序** 按钮。
 
-5. Here you are playing the role of the subaccount administrator. Under the **Users** tab, enter your email in both the **ID** and the **E-Mail** fields. In the **Identity Provider** dropdown choose the IAS tenant where trust has been established for the subaccount. In our case it is **Custom IAS tenant**. Then click the **Save** button at the top of the screen.
-
-![](vx_images/278002085692515.png)
-
- We have now assigned the `Launchpad_Admin` role collection to our workshop user and you can access SAP Build Work Zone, standard edition and carry out all your admin tasks.
- Let's access the application.
-
-6. From the side panel, click Services and then **Instances and Subscriptions**.
-Under the **Subscriptions** tab we can see the subscription to SAP Build Work Zone standard edition that we created earlier. We can now either click the available link **SAP Build Work Zone, standard edition** or if we enter the details view, we can also click **Go to Application** button on the right.
-
-![](vx_images/106302218472668.png)
+   ![](vx_images/106302218472668.png)
 
 
-7. The service opens with the Site Directory in focus. This is where you'll create and manage your sites.
-![](vx_images/108424101273939.png)
+7. 服务以站点目录为中心打开。这是您将创建和管理站点的地方。
+   ![](vx_images/108424101273939.png)
 
-> ℹ️ Note: It may take a few minutes for the admin role assignment to take effect.  If you get an **Access Denied** error, please try to access the admin environment in an anonymous window or logout and login again.
+   > ℹ️ 注意：管理员角色分配可能需要几分钟才能生效。如果您收到**访问被拒绝**错误，请尝试使用匿名窗口或注销后再登录以访问管理员环境。
 
-🎉 **Congrats** - you have finished this exercise! You have now created a subscription to SAP Build Work Zone, standard edition, assigned yourself the administrator role and are now ready to create your first site. 
+🎉 **恭喜** - 您已完成此练习！您已创建了 SAP Build Work Zone 标准版的订阅，分配了自己的管理员角色，并准备好创建您的第一个站点。 
 
 
 ---
 
+# 在 SAP BTP 中设置 PostgreSQL，超级云选项
 
-# Set Up PostgreSQL on SAP BTP, Hyperscaler Option
+要在全局帐户中使用 postgresql 服务，您需要首先将该服务及其相关计划分配给全局帐户，然后管理所需的权限。
 
-To use the postgresql service in your global account, you need to first assign the service and the relevant plans to your global account and then manage the required entitlements.
+### 前提条件
+* 您必须是全局帐户管理员，才能配置子帐户权限。
+* 您了解可用的服务计划[服务计划和权限](https://help.sap.com/docs/postgresql-hyperscaler-option/postgresql-on-sap-btp-hyperscaler-option/service-plans-and-entitlements)。
 
-### Prerequisites
-* You must be a global account administrator to configure subaccount entitlements.
-* You’re aware of the available service plans [Service Plans and Entitlements](https://help.sap.com/docs/postgresql-hyperscaler-option/postgresql-on-sap-btp-hyperscaler-option/service-plans-and-entitlements).
+### 驾驶舱中的配置
 
-### Configuration in Cockpit
+1. 导航到您的全局帐户。
+2. 选择左侧导航栏中的“权限”> 子帐户分配。
+3. 在页面顶部，选择希望为其配置或显示权限的所有子帐户。
+4. 选择“应用筛选器”。
 
-1. Navigate to your global account.
-2. Choose Entitlements  Subaccount Assignments from the left hand-side navigation.
-3. At the top of the page, select all the subaccounts for which you would like to configure or display entitlements.
-4. Choose Go to apply the filter.
+您可以看到每个所选子帐户的表格，显示当前的权限和配额分配。
 
-You can view a table for each of the subaccounts you selected, that displays the current entitlement and quota assignments.
+   ![](vx_images/557324344905026.png)
 
-![](vx_images/557324344905026.png)
+5. 如果找不到 PostgreSQL 超级云选项，请选择“配置权限”以开始编辑特定子帐户的权限。
+6. 现在可以编辑权限表：
 
-5. If you cannot find PostgreSQL, hyperscaler option, please choose Configure Entitlements to start editing entitlements for a particular subaccount.
-6. You can now edit the entitlements table:
+7. 选择“保存”以保存并退出编辑模式。对于开发计划，可以通过指定限制来设置子帐户中创建实例的数量限制。权限设置完成后，在您的云平台组织中将启用 PostgreSQL 超级云选项服务。
 
-7. Choose Save to save and exit edit mode.
-For the development plan, you can assign a limit on number of instances created in a subaccount by specifying a limit. After the entitlements are made, the PostgreSQL, hyperscaler option service will be enabled in your cloud foundry Org.
-
-![](vx_images/285064761621107.png)
+   ![](vx_images/285064761621107.png)
 
 ---
-

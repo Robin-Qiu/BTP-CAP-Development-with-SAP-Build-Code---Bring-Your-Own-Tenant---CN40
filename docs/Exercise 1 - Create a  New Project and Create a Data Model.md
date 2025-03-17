@@ -1,249 +1,232 @@
 <div class="draftWatermark"></div>
 
-# Exercise 1 - Create a  New Project and Create a Data Model
+# 练习1 - 创建一个新的项目和创建数据模型
 ---
-In this exercise, we will create an **incident_management** project in the new low-code perspective in SAP Business Application Studio.
+在此练习中，我们将在 SAP Business Application Studio 的新低代码视角中创建一个 **incident_management** 项目。
 
-Open your browser and launch the landing page, the "lobby".
+打开您的浏览器，启动 SAP Business Application Studio。
+ 
+Dev Sapces 下可能已经包含多个用于不同开发场景的 Space，进入一个可以进行 "Full Stack Cloud Application"开发的 Space。
+![](vx_images/92625318205208.png)
 
-
-A login page is opened, enter the credentials provided to you for the session.
-
-You should see the central entry point for SAP Build development in SAP BTP.
-
-The "lobby" may already contain multiple projects created in this account.
-![](vx_images/164712889910152.png)
-
-Click **Create** and select the **Build an Application** tile. 
-
-![](vx_images/102013125961048.png)
+在 Get Started 页面，选择 **New Project from Template**。
+![](vx_images/296217315452399.png)
 
 
-On the next screen, select the **SAP Build Code** tile.
 
-![](vx_images/271563289909452.png)
+然后选择 **CAP Project** 模版，点击 **Start** 按钮。
+![](vx_images/134106257459647.png)
 
-Then, select the **Full-Stack Application** tile.
+将出现一个对话框，您可以在其中输入以下项目名称。由于我们计划部署我们的项目，因此在此处遵循命名约定非常重要。
+
+**请勿使用您的自己的项目名称**
+
+必须将项目命名为 `incident_managementXXX` ，其中 XXX 是分配给您的用户编号。请确保您所在BTP环境所创建的项目不要与其他同事的项目冲突。建议借助用户编号以避免与其他人的部署冲突。如果您的用户编号是 **007**，则项目名称应为 **incident_management007**
+
+选择以下配置：
+
+|                              配置项                               |                             值                              |
+| ---------------------------------------------------------------- | ---------------------------------------------------------- |
+| **Select your runtime.**                                         | Node.js                                                    |
+| **Choose a database for your application.**                      | SAP HANA Cloud (如果需要部署到PostgreSQL，可自行选择)           |
+| **Choose which way to deploy your project.**                     | Cloud Foundry: MTA Deployment                              |
+| **Choose productive runtime capabilities for your application.** | SAP BTP Authorization and Trust Management Service (XSUAA) |
+
+点击 **Finish** 确认创建。
+
+![](vx_images/514147693635599.png)
+
+选择 **incident_managementXXX**,  打开项目，可以看到模版创建的文件夹结构
+![](vx_images/291970504552510.png)
+
+点击左下角齿轮图标，打开 Command Palette...
+![](vx_images/153364228105784.png)
+
+输入 **Storyboard**，点击 **Open Storyboard**。
+![](vx_images/596564366946789.png)
 
 
-![](vx_images/411011618596094.png)
-
-A dialog appears where you can enter the following name for your project. As we plan to deploy our project, it is important to stick to the naming convention here.  
-
-
-**DO NOT USE YOUR OWN PROJECT NAME**  
-
-You must name your project `incident_managementXXX`, where XXX is the user number that was assigned to you. Please make sure that you received a user number that was assigned to you by the speakers/moderators. Don't make up your own number to avoid clashes with the deployments of others. If your user number is **007** your project name should be **incident_management007**
-
-   
-You can provide any descriptive text that you want.  
-Confirm by clicking **Create**. 
-
-The project creation may last 2-3 minutes.
+选择你创建的项目路径
+![](vx_images/527623219695235.png)
 
 
-![](vx_images/128621518596794.png)
-
-From the list of projects, select **incident_managementXXX** and navigate to the storyboard in SAP Business Application Studio.
-![](vx_images/315271025596209.png)
-
-After SAP Business Application Studio has created your environment, you should see a screen like this. (Depending on whether your dev space has already started, this might take several minutes to open.)
 
 
-![](vx_images/164521924142687.png)
+在 SAP Business Application Studio 中导航到故事板，您应看到如下所示的界面。
 
-Now, we can build our project and use SAP-opinionated technologies, such as CAP (Cloud Application Programming Model) and SAP Fiori elements, without thinking about how to structure our project. We can concentrate on the tasks to perform rather than spending time on thinking about project setup and wiring up technologies.
+![](vx_images/300012908996821.png)
 
-In the next step, we will create a data model.
 
-## Summary
+现在，我们可以构建我们的项目，并使用 SAP 官方推荐的技术（例如 CAP 云应用程序编程模型 和 SAP Fiori elements），而不必担心如何结构化我们的项目。我们可以专注于需要执行的任务，而不是花费大量时间思考项目的设置和连接技术。
 
-You've now created an incident management project with a default **Processor** service that is ready for modeling, based on CAP (Cloud Application Programming model).
+在下一步中，我们将创建一个数据模型。
+## 总结
+已经成功创建了一个基于 CAP（云应用程序编程模型）的默认 **处理器** 服务的事件管理项目，该服务现在已准备好进行建模。
 
 ---
+接下来，在此练习中，我们将使用 SAP Business Application Studio 的新高生产力工具来创建一个数据模型，以持久化我们的业务数据。您将在稍后的步骤中将数据暴露为 OData 服务供其他应用程序使用。
+### 导入代码列表到数据模型
+在故事板中，点击 **+** 按钮下的 **数据模型** 标题，并输入 **命名空间**（例如：iac_adoptionlab）。点击创建以打开 CDS 图形建模器。
+![](vx_images/546593605701448.png)
 
+在 CDS 图形建模器编辑器的画布上双击，或者从右上方工具栏点击 **打开属性表** 图标。
+![](vx_images/275576205856021.png)
 
-<br>
+点击导入标签页，点击 **+**（从其它模型导出），然后选择 **通用类型**。
+![](vx_images/567714281481244.png)
 
-In the following exercise, we will use the new high productivity tools in SAP Business Application Studio to create a data model that persists our business data. You will expose the data as an OData service for our consuming applications later on.
+在对话框中，选择 **sap.common.CodeList** 复选框，并保持其他默认选项不变。
+![](vx_images/567273124479930.png)
 
-##### Import CodeList to the Data Model
+数据类型已导入到模型中。稍后将在 **Urgency** 实体中使用此数据类型作为属性。
 
-In the storyboard, click on the **+** button under the **Data Models** tile, and input the **Namespace** ( ie.: **iac_adoptionlab** ). click **Create** to open the CDS Graphical Modeler.
-![](vx_images/545591882827217.png)
-From the CDS Graphical Modeler editor's **double click** on the empty canvas, or from the top right toolbar click on the **Open Property Sheet** icon.
-![](vx_images/27463514921357.png)
+### 添加事件实体
+创建包含属性和注解的 **Incidents** 实体。
+在 CDS 图形建模器中，更改实体标题为 **Incidents**。
 
-Click the **Import** tab, click **+** (Import from other models), and select **Common Types**.
-![](vx_images/123463421668733.png)
-From the dialog box, select the **sap.common.CodeList** checkbox, and leave the other default options.
-
-![](vx_images/563263468569273.png)
-
-The data type is imported to the model. It will be used later as a property in the **Urgency** entity.
-
-
-
-##### Add the Incidents Entity
-Create the **Incidents** entity including properties and annotations.
-
-In the CDS Graphical Modeler, Change the entity tile's title to **Incidents**.
-Note that the ID property as a key is already created for you for convenience. 
-We leave it as is.
+注意 ID 属性已为您创建方便。我们保留原样不变。
 ![](vx_images/486874156771675.png)
 
+在 Incidents 编辑器中，点击 **属性** 标签页，并然后点击 +（添加属性）。
 
-In the Incidents editor, click the **Properties** tab, and then click **+** (Add property).
-
-For the **Name** column, enter **title** for the value.
-
-For the rest of the columns, leave the default values.
-
-The entity is updated with the new property.
+对于 Name 列，输入值为 **title**。
+其余列保持默认值不变。
+实体已更新新属性。
 
 ![](vx_images/81014089376439.png)
 
+在 Incidents 编辑器中，点击 **注解** 标签页。
 
-In the Incidents editor, click the **Annotations** tab.
+![](vx_images/81633325239108.png)
 
-Click  **+** (Add) next to the **title** row.
+点击 +（添加）旁边的 **title** 行。
+对于注解目标，从下拉列表中选择 **title**；
+对于注解值，输入 **Title**。
 
-1. For the **Annotation Target**, select **title** from the dropdown list.
-2. For the **Annotation Value**, enter **Title**.
-   
-The entity is updated with the new annotations.
+实体已更新并添加新的注解。
+![](vx_images/542272893782478.png)
 
-![](vx_images/482751964435025.png)
-
-##### Add the Conversations Entity
-Create the **Conversations** entity including its properties, annotations, and aspects.
-
-In the CDS Graphical Modeler, click **Add Entity**, and then click on the canvas.
-Change the tile's title to **Conversations**.
-
+### 添加对话实体
+创建包含属性，注解和方面的 **Conversations** 实体。
+在 CDS 图形建模器中，点击 + 添加实体，并点击画布。更改标题为 **Conversations**。
 ![](vx_images/189171419249104.png)
 
-In the **Conversations** editor, click the **Properties** tab. (If the editor is not already open, click the **Show Details** icon on the entity.)
+在 **Conversations** 编辑器中，点击 **属性** 标签页。（如果编辑器尚未打开，则可以点击实体上的显示详细信息图标以打开）
+点击 +（添加属性）为以下字段：
+1. 对于 Name 列，输入值 **timestamp**。对于 Type 列，输入 **DateTime**
+其余列保持默认值不变。
+2. 对于 Name 列，输入值 **author**。
+其余列保持默认值不变
+3. 对于 Name 列，输入值 **message**。
+其余列保持默认值不变
 
-Click **+** (Add property) for each of the fields below:
-1. For the **Name** column, enter **timestamp**. For the **Type** column, enter **DateTime**.
-For the rest of the columns, leave the default values
-2. For the **Name** column, enter **author**.
-For the rest of the columns, leave the default values
-3. For the **Name** column, enter **message**.
-For the rest of the columns, leave the default values.
+实体已更新新的属性。
 
-The entity is updated with the new properties.
+![](vx_images/50554845225387.png)
 
+在对话编辑器中，点击 **注解** 标签页。
 
-![](vx_images/410222604988954.png)
+点击 +（添加）旁边的 **timestamp**。
+1. 对于注解目标，从下拉列表中选择 **cds.on.insert**；
+2. 对于注解值，从下拉列表中选择 **$now**
 
-In the Conversation editor, click the **Annotations** tab.
+点击 +（添加）旁边的 **author** 行。
+1. 对于注解目标，从下拉列表中选择 **cds.on.insert**；
+2. 对于注解值，从下拉列表中选择 **$user**
 
-   
-Click **+** (Add) next to the **timestamp**.
-1. For the **Annotation Target**, select **cds.on.insert** from the dropdown list.
-2. For the **Annotation Value**, select **$now** from the dropdown list.
+实体已更新新的注解。
+![](vx_images/594047402520303.png)
 
-Click **+** (Add) next to the **author** row.
-1. For the **Annotation Target**, select **cds.on.insert** from the dropdown list.
-2. For the **Annotation Value**, select **$user** from the dropdown list.
-The entity is updated with the new annotations.
+### 添加紧急程度枚举
+在 CDS 图形建模器中，点击 + 并选择从下拉菜单中的添加枚举，并然后点击在画布上。更改标题为 **UrgencyCode**。
+![](vx_images/542213571879784.png)
 
-![](vx_images/369222671644813.png)
+如果没有打开，点击显示详细信息图标以在右侧打开 **UrgencyCode** 编辑器。
 
-##### Add the UrgencyCode Enum
+在 UrgencyCode 编辑器中，点击 **属性** 标签页。
+1. 选择字符串单选按钮；
+2. 对于枚举符号列，输入 **High**；
+3. 对于枚举值列，输入 **H**；
+4. 点击 +（添加枚举符号）；
+5. 对于枚举符号列，输入 **Medium**；
+6. 对于枚举值列，输入 **M**；
+7. 点击 +（添加枚举符号）；
+8. 对于枚举符号列，输入 **Low**；
+9. 对于枚举值列，输入 **L**
 
-In the CDS Graphical Modeler, click **+**, select **Add Enum** from the dropdown list, and then click on the canvas. 
-Change the tile's title to **UrgencyCode**.
+UrgencyCode 实体已更新新的属性。
 
-![](vx_images/536201581866205.png)
+![](vx_images/253345285181795.png)
 
-If it is not already open, click the **Show Details** icon to open the **UrgencyCode** editor on the right-hand side.
+### 添加紧急程度实体
+基于 UrgencyCode 枚举创建 Urgency 实体，并添加代码列表方面。
 
-In the UrgencyCode editor, click the **Properties** tab.
-1. Select the **String** radio button.
-2. For the **Enum Symbol** column, enter **High**.
-3. For the **Enum Value** column, enter **H**.
-4. Click **+** (Add enum symbol).   
-5. For the **Enum Symbol** column, enter **Medium**.
-6. For the **Enum Value** column, enter **M**.
-7. Click **+** (Add enum symbol).   
-8. For the **Enum Symbol** column, enter **Low**.
-9. For the **Enum Value** column, enter **L**.
-    
-The UrgencyCode entity is updated with the new properties.
-
-![](vx_images/333234217143272.png)
-
-##### Add the Urgency Entity
-Create the Urgency entity based on the UrgencyCode Enum, and add the CodeList aspect.
-
-In the CDS Graphical Modeler, click **Add Entity**.
-Change the tile's title to **Urgency**.
-Again, the **ID** property is created for you. However, this time we will change it.
+在 CDS 图形建模器中，点击 + 添加实体。
+更改标题为 **Urgency**。但是这次我们将会改变它。
 
 ![](vx_images/345231604047565.png)
 
-Click on the **Show Details** icon. A new Urgency editor opens on the right-hand side.
-In the Urgency editor, click the **Properties** tab.
+点击显示详细信息图标。右侧将打开一个新的Urgency编辑器。
+在 Urgency 编辑器中，点击 **属性** 标签页。
 
-1. Change the **ID** property to **code**.
-3. Change the **UUID** type, to the previously created **UrgencyCode**.
-3. For the rest of the columns, leave the default values.
+1. 更改 ID 属性为 code；
+2. 改变 UUID 类型，为先前创建的 UrgencyCode；
+3. 对于其余列，请保持默认值不变。
 
-The entity is updated with the new property.
+实体已更新新的属性。
 
-![](vx_images/537593450907159.png)
+![](vx_images/446304337571445.png)
+
+在 Urgency 编辑器中，点击 **方面** 标签页。
+![](vx_images/168797001194447.png)
+
+选择 sap.common.CodeList 方面复选框。
+
+实体已更新新的方面。
+
+![](vx_images/598797204553942.png)
+
+### 添加实体关联
+
+在 **Incidents** 实体和 **Conversations** 以及 **Urgency**之间创建关联。一个事件包括紧急程度，并且多个对话。
+
+1. 选择 Incidents 实体并点击添加关联图标。
+2. 出现一个箭头。将箭头拖动到 Conversations 实体上。
+![](vx_images/158367723052559.png)
+![](vx_images/28248757255429.png)
+
+将打开新的关联对话框。
+在对话框中，填写以下值：
+1. 对于类型，选择组合；
+2. 对于多重性，选择多对一；
+3. 其余字段保持默认值不变。
+4. 点击 **OK** 创建。
+
+Incidents 实体已更新新的关联到 Conversations。
+
+![](vx_images/115506066766770.png)
+
+对于 Incidents 实体重复以上步骤
+2. 出现一个箭头。将箭头拖动到 **Urgency** 实体上。
+![](vx_images/111818382924098.png)
+
+将打开新的关联对话框。
+在该对话框中填写以下值：
+1. 对于类型，选择关联；
+2. 对于多重性，选择一对一；
+3. 对于反向链接属性，设置为空白;
+4. 其余字段保持默认值不变；
+5. 点击 创建。
+ 
+Incidents 实体已更新新的关联到 Urgency。
+
+![](vx_images/231618165444874.png)
+
+![](vx_images/285796513277136.png)
+
+![](vx_images/336726666762453.png)
 
 
-In the Urgency editor, click the **Aspects** tab.
+## 总结
 
-Select the **sap.common.CodeList** aspect checkbox.
-
-The entity is updated with the new aspect.
-
-![](vx_images/499404917134865.png)
-
-
-##### Add the Entity Relationship
-
-Create associations between **Incidents** and both **Conversations** and **Urgency**. An incident includes urgency, and multiple conversations.
-
-1. Select the **Incidents** entity and click the **Add Relationship** icon.
-
-
-2. An arrow appears. Drag the arrow to the **Conversations** entity.
-
-![](vx_images/342646255168320.png)
-
-The **New Relationship** dialog box opens.
-In the dialog box, fill in the following values:
-   1. For **Type**, select **Composition**.
-   2. For **Multiplicity**, select **To-Many**.
-   3. For the rest of the fields, leave the default values.
-   4. Click **Create**.
-   
-The Incidents entity is updated with the new relationship to Conversations.
-
-![](vx_images/539774665957616.png)
-
-1. Select the **Incidents** entity and click the **Add Relationship** icon.
-2. An arrow appears. Drag the arrow to the **Urgency** entity.
-The **New Relationship** dialog box opens.
-In the dialog box, fill in the following values:
-   1. For **Type**, select **Association**.
-   2. For **Multiplicity**, select **To-One**.
-   3. For **Backlink Property**, set it as **blank**.
-   4. For the rest of the fields, leave the default values.
-   5. Click **Create**.
-   
-The Incidents entity is updated with the new relationship to Urgency.
-
-![](vx_images/552713752168905.png)
-
-
-## Summary
-
-You've now created a data model including persistence in CAP (Cloud Application Programming model) that can be used later be deployed to the SAP HANA database that we will use. Note that you have not seen any CAP-related commands or syntax.
-
+已经创建了一个包含持久化的数据模型，该数据模型可以用于后续部署到我们将使用的 SAP HANA 数据库中。请注意，您尚未看到任何与 CAP 相关的命令或语法。

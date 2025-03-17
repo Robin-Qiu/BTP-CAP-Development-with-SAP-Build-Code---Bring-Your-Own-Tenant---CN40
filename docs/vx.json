@@ -1,161 +1,111 @@
 {
-    "created_time": "2024-02-26T12:10:39Z",
+    "created_time": "2025-03-16T09:34:30Z",
     "files": [
         {
             "attachment_folder": "",
-            "created_time": "2024-02-26T12:12:19Z",
-            "id": "17",
-            "modified_time": "2024-06-30T02:07:54Z",
-            "name": "index.html",
-            "signature": "784285914999062563",
-            "tags": [
-            ]
-        },
-        {
-            "attachment_folder": "",
-            "created_time": "2024-02-26T12:12:28Z",
-            "id": "658",
-            "modified_time": "2024-11-12T09:53:48Z",
-            "name": "Exercise 1 - Create a  New Project and Create a Data Model.md",
-            "signature": "5546498803300597804",
-            "tags": [
-            ]
-        },
-        {
-            "attachment_folder": "477573873607615",
-            "created_time": "2024-02-26T12:12:31Z",
-            "id": "654",
-            "modified_time": "2024-11-12T15:42:51Z",
-            "name": "Exercise 0 - Getting Started - Preparation.md",
-            "signature": "8223662518600237103",
-            "tags": [
-            ]
-        },
-        {
-            "attachment_folder": "440614109288799",
-            "created_time": "2024-04-11T03:05:26Z",
-            "id": "82",
-            "modified_time": "2024-11-21T02:50:11Z",
+            "created_time": "2025-03-16T09:35:24Z",
+            "id": "1060",
+            "modified_time": "2025-03-16T09:35:24Z",
             "name": "_sidebar.md",
-            "signature": "825932396101063542",
+            "signature": "5355092125498645340",
             "tags": [
             ]
         },
         {
             "attachment_folder": "",
-            "created_time": "2024-04-11T03:08:51Z",
-            "id": "86",
-            "modified_time": "2024-11-18T17:20:11Z",
-            "name": "README.md",
-            "signature": "207324079150147",
+            "created_time": "2025-03-16T09:35:52Z",
+            "id": "1061",
+            "modified_time": "2025-03-16T14:54:35Z",
+            "name": "Exercise 1 - Create a  New Project and Create a Data Model.md",
+            "signature": "6175546817381833592",
             "tags": [
             ]
         },
         {
             "attachment_folder": "",
-            "created_time": "2024-04-11T03:26:00Z",
-            "id": "656",
-            "modified_time": "2024-11-20T04:37:45Z",
+            "created_time": "2025-03-16T09:44:28Z",
+            "id": "1062",
+            "modified_time": "2025-03-16T13:28:46Z",
+            "name": "Exercise 0 - Getting Started - Preparation.md",
+            "signature": "9258409432609889660",
+            "tags": [
+            ]
+        },
+        {
+            "attachment_folder": "",
+            "created_time": "2025-03-16T14:55:16Z",
+            "id": "1063",
+            "modified_time": "2025-03-17T02:08:08Z",
             "name": "Exercise 2 - Refer to an SAP S4HANA Cloud Service in Your Data Model.md",
-            "signature": "8364164805960357960",
+            "signature": "3117006881123919444",
             "tags": [
             ]
         },
         {
             "attachment_folder": "",
-            "created_time": "2024-04-11T07:10:15Z",
-            "id": "657",
-            "modified_time": "2024-11-11T08:21:33Z",
+            "created_time": "2025-03-17T02:09:10Z",
+            "id": "1064",
+            "modified_time": "2025-03-17T02:52:58Z",
             "name": "Exercise 3 - Create a List Report UI Application and Deploy to PostgreSQL on SAP BTP, hyperscaler option.md",
-            "signature": "4203851404774182103",
+            "signature": "16368307133451043910",
             "tags": [
             ]
         },
         {
             "attachment_folder": "",
-            "created_time": "2024-04-11T07:49:53Z",
-            "id": "662",
-            "modified_time": "2024-06-28T08:34:36Z",
-            "name": "Exercise 5 - Add Unit Test to the Application.md",
-            "signature": "819510079963764257",
-            "tags": [
-            ]
-        },
-        {
-            "attachment_folder": "",
-            "created_time": "2024-04-11T07:59:18Z",
-            "id": "671",
-            "modified_time": "2024-06-28T08:34:50Z",
-            "name": "Exercise 7 - Integrate with SAP Build Work Zone.md",
-            "signature": "4293452312423667798",
-            "tags": [
-            ]
-        },
-        {
-            "attachment_folder": "",
-            "created_time": "2024-04-19T08:45:16Z",
-            "id": "672",
-            "modified_time": "2024-11-19T12:24:20Z",
-            "name": "Exercise 8 - Create App with SAP Build Code and Joule copilot.md",
-            "signature": "8085520616425402140",
-            "tags": [
-            ]
-        },
-        {
-            "attachment_folder": "",
-            "created_time": "2024-05-06T05:57:10Z",
-            "id": "665",
-            "modified_time": "2024-06-28T08:35:02Z",
-            "name": "Exercise 8 - Consume Events from SAP S4HANA Cloud Using CAP.md",
-            "signature": "8784647563144360246",
-            "tags": [
-            ]
-        },
-        {
-            "attachment_folder": "",
-            "created_time": "2024-05-06T05:58:43Z",
-            "id": "664",
-            "modified_time": "2024-11-20T04:44:22Z",
+            "created_time": "2025-03-17T04:55:00Z",
+            "id": "1065",
+            "modified_time": "2025-03-17T07:59:13Z",
             "name": "Exercise 4 - Enhance Fiori Elements with UI Adaption.md",
-            "signature": "8416612854932205971",
+            "signature": "14425338678351473444",
             "tags": [
             ]
         },
         {
             "attachment_folder": "",
-            "created_time": "2024-05-10T03:40:08Z",
-            "id": "668",
-            "modified_time": "2024-11-11T02:40:32Z",
-            "name": "Setup for SAP BTP Adoption Lab BYOT - Speed Up Clean Core Extension with BTP CAP AI based Agile Development.md",
-            "signature": "2211796421286139672",
+            "created_time": "2025-03-17T09:34:14Z",
+            "id": "1066",
+            "modified_time": "2025-03-17T09:34:14Z",
+            "name": "Exercise 5 - Add Unit Test to the Application.md",
+            "signature": "12293754462410370198",
             "tags": [
             ]
         },
         {
             "attachment_folder": "",
-            "created_time": "2024-05-26T16:13:06Z",
-            "id": "669",
-            "modified_time": "2024-06-28T08:34:42Z",
+            "created_time": "2025-03-17T09:43:44Z",
+            "id": "1067",
+            "modified_time": "2025-03-17T11:10:29Z",
             "name": "Exercise 6 - Implement Roles and Authorization Checks In CAP.md",
-            "signature": "7368913268780523410",
+            "signature": "14111790608156192464",
             "tags": [
             ]
         },
         {
             "attachment_folder": "",
-            "created_time": "2024-04-19T08:45:16Z",
-            "id": "691",
-            "modified_time": "2024-11-19T11:41:50Z",
-            "name": "Exercise 8 - Create App with SAP Build Code and Joule copilot_backup.md",
-            "signature": "1395245223331529510",
+            "created_time": "2025-03-17T13:10:08Z",
+            "id": "1068",
+            "modified_time": "2025-03-17T13:10:08Z",
+            "name": "Exercise 7 - Integrate with SAP Build Work Zone.md",
+            "signature": "17382993337519710000",
+            "tags": [
+            ]
+        },
+        {
+            "attachment_folder": "",
+            "created_time": "2025-03-17T13:10:32Z",
+            "id": "1069",
+            "modified_time": "2025-03-17T13:10:53Z",
+            "name": "Exercise 8 - Create App with SAP Build Code and Joule copilot.md",
+            "signature": "14362445492256251720",
             "tags": [
             ]
         }
     ],
     "folders": [
     ],
-    "id": "16",
-    "modified_time": "2024-02-26T12:10:39Z",
-    "signature": "207324075294655",
+    "id": "1059",
+    "modified_time": "2025-03-16T09:34:30Z",
+    "signature": "5457511135409773350",
     "version": 3
 }

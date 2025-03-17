@@ -1,75 +1,98 @@
 <div class="draftWatermark"></div>
 
-# Exercise 6 - Implement Roles and Authorization Checks In CAP
+# 实践任务6 - 实现角色和权限检查
 
 ---
 
-This exercise shows you how to enable authentication and authorization for your CAP application.
+本任务将向你展示如何为CAP应用程序启用身份验证和授权。
 
-You will learn
-* How to add role restrictions to entities
-* How to add a local user for testing
-* How to access the application with a user and password
+你需要学习以下内容：
+* 如何将角色限制添加到实体中
+* 如何为测试添加本地用户 
+* 如何使用用户名和密码访问应用程序
 
-## Adding CAP role restrictions to entities
+## 在CAP实体中添加角色限制
 
-1. Select **Processer** service, click **Define User Role** to open Authorization Editor
+1. 选择**service.cds**, 打开编辑器
 
-![](vx_images/545454473795921.png)
+针对实体 **Incidents**，添加一个名为**IncidentViewer**的角色，并将其权限设置为**Read**
 
+```
+annotate Incidents with @restrict :
+    [
+        { grant : [ 'READ' ], to : [ 'IncidentViewer' ] }
+    ];
+```
 
-2. Select U**ser Roles** to add new roles.
+![](vx_images/13511186042636.png)
 
-![](vx_images/465735225785279.png)
+2. 添加另一个名为**IncidentManager**的角色，并将其权限设置为**Full**
 
-3. Click the **+** icon to add new user role.
+```
+{ grant : [ '*' ], to : [ 'IncidentManager' ] }
+```
 
-Add one role name as **IncidentViewer** and set the privilege as **Read**
-
-![](vx_images/550994083754865.png)
-
-Add another role name as **IncidentManager**, and set the privilege as **Full**.
-
-![](vx_images/37494125336073.png)
-
-4. Next we can assign the role to the service.
-
-Select **IncidentViewer** role and choose Service Assignment as **Processor**
-
-![](vx_images/22254381094408.png)
-
-Assign the role to the service entities with Read privilege.
-
-![](vx_images/540944651435046.png)
-
-Select IncidentManager role and assign the Full privilege with the service entities.
-
-![](vx_images/453984106249125.png)
+![](vx_images/504282238646525.png)
 
 
 
 
 
+4. 接下来，可以将角色分配给服务。
+
+选择角色**IncidentViewer**和**IncidentManager**，并将其分配给服务 **Processor**
+
+```
+annotate Processor with @requires :
+[
+    'authenticated-user',
+    'IncidentViewer',
+    'IncidentManager'
+];
+```
+![](vx_images/132013571665938.png)
+
+重复以上步骤，给实体**Customers**，**Conversations**，**Urgency** 分配 **IncidentViewer**，**IncidentManager**角色权限
+
+```
+    annotate Customers with @restrict :
+    [
+        { grant : [ 'READ' ], to : [ 'IncidentViewer' ] },
+        { grant : [ '*' ], to : [ 'IncidentManager' ] }
+    ];
+
+    annotate Conversations with @restrict :
+    [
+        { grant : [ 'READ' ], to : [ 'IncidentViewer' ] },
+        { grant : [ '*' ], to : [ 'IncidentManager' ] }
+    ];
+
+    annotate Urgency with @restrict :
+    [
+        { grant : [ 'READ' ], to : [ 'IncidentViewer' ] },
+        { grant : [ '*' ], to : [ 'IncidentManager' ] }
+    ];
+```
+
+![](vx_images/43322724000587.png)
+
+5. 检查**xs-security.json**文件的内容。
+
+你已经在CDS服务模型中使用require注解添加了授权。
 
 
-5. Check the content of the **xs-security.json** file.
-
-You have already added authorization with the requires annotations in the CDS service model. 
-
-
-
-Run the following command in the terminal:
+在终端运行以下命令：
 
 `cds add xsuaa --for production`
 
-> Running cds add xsuaa does two things:
-> 
-> Adds the SAP Authorization and Trust Management service service to the **package.json** file of the INCIDENT-MANAGEMENT project.
-> Creates the SAP Authorization and Trust Management service security configuration (that is, the xs-security.json file) for the INCIDENT-MANAGEMENT project.
+> 运行cds add xsuaa做了两件事：
+>
+> 将SAP授权和信任管理服务添加到**package.json**文件中的INCIDENT-MANAGEMENT项目中。
+> 创建SAP授权和信任管理服务的安全配置（即xs-security.json文件）供INCIDENT-MANAGEMENT项目使用。
 
 ![](vx_images/256212859644834.png)
 
-This is now translated into scopes and role templates for the SAP Authorization and Trust Management service. Hence, a scope and role template for the support role are created in the **xs-security.json** file: (Replace **XXX** with your ID)
+这是现在转换为SAP授权和信任管理服务的范围和角色模板。因此，在**xs-security.json**文件中为支持角色创建了一个范围和角色模板：（将**XXX**替换为你自己的ID）
 ```
 
 {
@@ -107,63 +130,51 @@ This is now translated into scopes and role templates for the SAP Authorization 
 }
 ```
 
-6. Re-deploy the application and check the new roles.
+6. 重新部署应用程序并检查新角色。
 
 ![](vx_images/218815691988975.png)
 
-After the deployment, you can find new created incident roles are under the subaccount Roles page.
+部署后，你可以在子账户的Roles页面下查找新创建的角色。
 
 ![](vx_images/75554769866226.png)
 
-
-If you try to the application, there will be a **Forbidden** error message pop-ups.
+当你尝试访问应用程序时，会出现一个**Forbidden**的错误信息。
 
 ![](vx_images/64524926096370.png)
 
-7. Assign the new roles and check the access control.
+7. 分配新角色并检查访问控制。
 
 ![](vx_images/382164892047586.png)
 
+首先，创建一个名为**Incident Viewer**的角色集合，并添加角色**IncidentViewer**至其中。
 
-
-Firstly, create one role collection as **Incident Viewer** and add role **IncidentViewer** to it. 
-
-Assign the role collection to yourself.
-
+将该角色集合分配给自己。
 
 ![](vx_images/541796062247596.png)
 
+你将有权搜索记录，但不能编辑。
 
-You will have the access to search records but cannot edit.
+![](vx_images/196396482298035.png) 
 
-![](vx_images/196396482298035.png)
+让我们创建一个新的名为**Incident Manager**的角色集合，并将角色**IncidentManager**绑定到其中。
 
-
-Let's create a new role collection as **Incident Manager** and bind the **IncidentManager**. 
-
-Assign it to yourself and check the application access. 
+将其分配给自己，检查应用程序访问权限。 
 
 ![](vx_images/450006979832286.png)
 
-
-Now you can search and edit the records.
+现在你可以搜索和编辑记录。
 
 ![](vx_images/538976541792715.png)
 
+## 为本地测试添加用户
 
+你所添加到CAP模型中的权限检查不仅在云部署时会应用，在本地测试中也会应用。因此，你需要一种方式能够以本地的方式登录应用程序。
 
+CAP提供了一种可能性，在cds配置中为测试添加本地用户。在此教程中，你使用package.json文件中的开发配置来添加用户。
 
+1. 在你的项目目录中打开package.json文件。
 
-## Add users for local testing
-
-The authorization checks that you added to the CAP model apply not only when deployed in the cloud but also when testing locally. Therefore, you need a way to log in to the application locally.
-
-CAP offers a possibility to add local users for testing as part of the cds configuration. In this tutorial, you use the development profile in package.json file to add the users.
-
-1. Open the package.json file in your project directory.
-
-
-In the package.json file, add the following code:
+在package.json文件中，添加以下代码：
 
 ```
 
@@ -191,49 +202,40 @@ In the package.json file, add the following code:
 
 ![](vx_images/412434112887792.png)
 
+每个用户条目都是用户的对象的一部分。键是用户的ID，它们可以有不同的属性。对于此场景你定义一个密码以及角色的数组。
 
-Each user entry is part of the users object. The key is the id of the user and they can have different properties. For this scenario you define a password and an array of roles.
+你添加了两个用户：
 
-You have added two users:
+* **alice**，具有**IncidentViewer**角色和初始密码
+* **bob**，具有**IncidentManager**角色和初始密码
 
-* **alice** with the **IncidentViewer** role and the **initial** password
-* **bob** with the **IncidentManager** role and the **initial** password
+> 请注意，CAP的角色与Cloud Foundry的角色和范围并不是同一回事。请参阅文档中的认证部分。
 
+2. 设置**身份验证**为**Mocked**在运行配置中
 
-> Keep in mind that the CAP roles and the Cloud Foundry roles and scopes are not the same thing. See Authentication in the CAP documentation.
-
-
-2. Set the **Authentication** as **Mocked** in the Run Configuration
-
-Click the **Run** icon
+点击**Run**图标 
 
 ![](vx_images/110974828821252.png)
 
-
-Click the Incidents tile to open th app.
+点击Incidents图标以打开应用程序。
 
 ![](vx_images/238703093140552.png)
 
-It will pop-up the Sign in dialog and input the **alice** credential.
+它将弹出登录对话框，输入**alice**凭据。
 
 ![](vx_images/517763058011228.png)
 
-Try to edit the record and it will pop-up Forbidden error message.
+尝试编辑记录，它将弹出“被禁止”的错误信息。
 
 ![](vx_images/588244042493554.png)
 
-
-
-Logout and switch to **bob** credential to check the access privilege.
+注销后，切换到**bob**凭据检查权限。
 
 ![](vx_images/458513962220702.png)
 
-
-Now you can edit the record and have the full privilege.
+现在你可以编辑记录并拥有完整的权限。
 
 ![](vx_images/238785313543455.png)
 
-
-
-**Congratulations!**
-You have a better understanding of the authentication and authorization in CAP application.
+**恭喜你！**
+你现在对CAP应用程序中的认证和授权有了更好的理解。

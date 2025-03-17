@@ -1,39 +1,37 @@
 <div class="draftWatermark"></div>
 
-
-# Getting Started - Preparation
+# 开始准备 - **CN40环境**
 ---
-Let's start the exercise and check if everything is ready to go.
-Please make sure you have completed all the necessary prerequisites listed below. If not, please raise your voice so that we can assist you early in the session.
+让我们开始练习，并检查是否一切就绪。
+请确保您已完成以下所有必要的先决条件。如果遇到问题，请利用<mark>ZOOM会议**举手**</mark>功能，我们会按顺序帮忙检查。
 
-## Prerequisites
-Please keep the following links and resources available:
+## 先决条件
+请保留以下链接和资源：
 
-1. Make sure you have access to a browser, preferably Google Chrome.
-2. Log on to the Development Lobby  
-![](vx_images/317064936785258.png)
-
-
-4.  If you will deploy all the the artifacts to the same SAP BTP account, and having different names and identifiers is important to avoid clashes. please use a reference to your **XXX** number. Make sure that you remember it well.
-
-## Hands-on Architecture
-
-1. Please subscribe the required BTP services before your hands-on exercises: [Setup Guide](https://dam.sap.com/mac/u/a/C5HSPyJ.htm?rc=10&doi=SAP1080426)
-
-![](vx_images/501266288117740.png)
+1. 确保您已访问浏览器（最好是Google Chrome）。
+2. 登录到 BTP 主控室，已经激活 SAP Business Application Studio
+![](vx_images/352776508952486.png)
 
 
-## Import the S/4HANA Cloud integration destination
+4. 如果您有多位同事会部署到同一 SAP BTP 账户，请用不同名称和标识以避免冲突，可以后缀**XXX**号以区分。
 
-> Download a sample destination for S/4HANA Cloud [ADOPTION_LAB_API_BUSINESS_PARTNER](https://robin-qiu.github.io/BTP-CAP-Development-with-SAP-Build-Code---Bring-Your-Own-Tenant/vx_attachments/477573873607615/ADOPTION_LAB_API_BUSINESS_PARTNER ':include')  :truck::truck::truck:.
+## 实操架构
 
-2. Import the destination into your BTP subaccount.
-![](vx_images/76056794022621.png)
+1. 在进行动手操作练习之前，请订阅所需的 BTP 服务：[设置指南](https://dam.sap.com/mac/u/a/C5HSPyJ.htm?rc=10&doi=SAP1080426)
 
-3. The credential will be supplied during the adoption lab hands-on session.
+![](vx_images/168311802962872.png)
 
-![](vx_images/305616256262898.png)
+## 导入 S/4HANA Cloud 集成目的地
 
-4. If you try to "**Check Connection"**, then you will get **"200: OK"** message and this is a normal feedback.
+> 下载用于 S/4HANA Cloud 的示例目标 [ADOPTION_LAB_API_BUSINESS_PARTNER](https://robin-qiu.github.io/BTP-CAP-Development-with-SAP-Build-Code---Bring-Your-Own-Tenant/vx_attachments/477573873607615/ADOPTION_LAB_API_BUSINESS_PARTNER ':include')  :truck::truck::truck:。
 
-![](vx_images/433437007921942.png)
+2. 将目标导入您的 BTP 子账户。
+![](vx_images/513486524132934.png)
+
+
+3. 在动手实验室期间，会提供密码（如果不清楚，请在练习时询问讲师）。
+![](vx_images/456075103634376.png)
+
+
+4. 如果您尝试“**检查连接**”，则会收到 **"200: OK"** 消息，并且这是正常反馈。
+![](vx_images/457903505140661.png)

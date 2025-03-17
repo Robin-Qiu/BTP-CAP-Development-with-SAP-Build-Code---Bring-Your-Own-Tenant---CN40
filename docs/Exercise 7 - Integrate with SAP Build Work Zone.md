@@ -1,105 +1,91 @@
 <div class="draftWatermark"></div>
 
-# Exercise 7 - Integrate with SAP Build Work Zone
+# 练习 7 - 集成到 SAP Build Work Zone
 ---
 
+在接下来的步骤中，您将把部署好的HTML5应用添加到SAP Build Work Zone（标准版）中创建的站点内。
 
-In the following steps, you will add the deployed HTML5 application to a site created in SAP Build Work Zone, standard edition.
+## 前提条件
 
-## Prerequisites
+我们已经在SAP BTP控制台为您执行了以下步骤：
+- 添加对SAP Build Work Zone（标准版）的权限。
+- 创建一个订阅到SAP Build Work Zone（标准版）。
+- 分配`Launchpad_Admin`角色集。
 
-We have already performed the following steps in the SAP BTP cockpit for you:
-- Added an entitlement to SAP Build Work Zone, standard edition.
-- Created a subscription to SAP Build Work Zone, standard edition.
-- Assigned the `Launchpad_Admin` role collection.
 
-  
-## Check the running service and UI after deplyomemnt
+## 检查部署后的服务和UI
 
-Navigate to Instances and Subscriptions and launch SAP Build Work Zone, standard edition:
+导航到实例与订阅，启动 SAP Build Work Zone（标准版）：
 
 ![](vx_images/325313981703135.png)
 
-From the activity bar, click the **Channel Manager** icon.<br>
-For the **HTML5 Apps** channel, click the **Update content** icon.
+从活动栏中点击**通道管理器**图标。<br>
+对于**HTML5应用**频道，点击**更新内容**图标。
 
 ![](vx_images/80730659011112.png)
 
-The deployed application is updated in the **HTML5 Apps** channel.
+部署的应用程序更新在了**HTML5应用**频道中。
 
-From the activity bar, click the **Content Manager** icon.<br>
-Click **Content Explorer**, and then click the **HTML5 Apps** tile.
+从活动栏，点击**内容管理器**图标。<br>
+点击**内容浏览器**，然后点击**HTML5应用**磁贴。
 
 ![](vx_images/35854450976522.png)
 
-Click **HTML5 Apps** to browse the applications
+点击**HTML5应用**来浏览应用程序
 
 ![](vx_images/499102567118373.png)
 
-Search for the **incidentmanagementXXX** application where **XXX** corresponds to your project suffix.
+搜索**incidentmanagementXXX**应用，其中 **XXX** 对应于您的项目后缀。
 
-Verify that the **ID** column ends with **XXX.Incidents**.<br>
-Select the checkbox for your application.<br>
-Click **Add**.
+确认**ID**列以**XXX.Incidents**结束。<br>选择您的应用旁边的复选框。<br>
+点击 **添加**。
 
-The application is added to your **HTML5 Apps** content.
+该应用程序已添加到您的**HTML5应用**内容中。
 
 ![](vx_images/261654492923856.png)
 
-Go back to the **Content Manager**.<br>
-Click **Create > Group**.
-
+返回到**内容管理器**。<br>点击 **创建 > 组群**。
 
 ![](vx_images/158074159514134.png)
 
-The **New Group** editor opens.
+**新建组群编辑器** 已打开。
 
-In the **Title** field, enter **Incident Management XXX**, where **XXX** corresponds to your project suffix.<br>
-In the **All Apps** list, search for the **incidentmanagementXXX** app.<br>
-Use the toggle in the **Assignment Status** column on the right to assign the application to the group.<br>
-Click **Save**.
+在 **标题** 字段中，输入 **事件管理XXX**，其中**XXX**对应于您的项目后缀。<br>
+在 **所有应用** 列表中搜索**incidentmanagementXXX** 应用。<br>
+使用 **分配状态** 列中的切换按钮将应用程序分配给该组群。<br>点击 **保存**。
 
-A group is added to your content.
+一个组群已添加至您的内容中。
 
 ![](vx_images/45431614543339.png)
 
-Go back to **Content Manager**.<br>
-Search for the **Everyone** role.<br>
-Click on the **Everyone** role. A new editor opens.<br>
+返回到**内容管理器**。<br>搜索 **所有人** 角色。<br>
+点击**所有人**角色，一个新的编辑器将打开。
 
 ![](vx_images/594914367751002.png)
 
-Click **Edit**.<br>
-Search for the **incidentmanagementXXX** app, where **XXX** corresponds to your project suffix.<br>
-Use the toggle in the **Assignment Status** column on the right to assign the application to **Everyone**.<br>
-Click **Save**.
+点击**编辑**。<br>
+搜索 **incidentmanagementXXX** 应用，其中**XXX**对应于您的项目后缀。<br>
+使用 **分配状态** 列中的切换按钮将应用程序分配给所有人。<br>点击 **保存**。
 
-The application can now be viewed by everyone.
+该应用现在可以被所有人都查看了。
 
 ![](vx_images/216750681607498.png)
 
-From the activity bar, click the **Site Directory** icon, and click the **+ Create Site** button.<br>
-
+从活动栏中点击**站点目录**图标，然后点击**+ 创建站点**按钮。
 ![](vx_images/277314441893079.png)
 
-
-Name the site (i.e. **Adoption Lab**).
+命名站点（例如**Adoption Lab**）。
 
 ![](vx_images/210914585329309.png)
 
-Click the **Go to site** icon. 
-
+点击**前往站点**图标。
 ![](vx_images/110473747302976.png)
 
-Click the **Incident Management XXX** tile, where XXX corresponds to your project suffix.
-Your application is launched in a site.
+点击**事件管理XXX**磁贴，其中 XXX 对应于您的项目后缀。
+您的应用程序在一个站点中启动。
 
 ![](vx_images/567833970879728.png)
 
+## 总结
 
-
-
-
-## Summary
-
-You have integrated your deployed application to Work Zone.
+您已将部署的应用程序集成到了 Work Zone 中。

@@ -1,91 +1,104 @@
 <div class="draftWatermark"></div>
 
-# Exercise 2 - Refer to an SAP S/4HANA Cloud Service in Your Data Model
----
-
-In this exercise, we will add an SAP S/4HANA Cloud service, the Business Partner, to our project and associate it with our incident management model.
-
-![](vx_images/325096176622878.png)
-
-![](vx_images/180396878915669.png)
-
-##### Discover an SAP S/4HANA Cloud Service and Add it to Your Data Model
-
-From the **Storyboard**, click "+" on the **External Resources** tile. This opens the **Service Center** on the left-hand side.
-
-![](vx_images/509205977768349.png)
-
-There, you can see the **SAP System** node. Technically, it contains destinations to OData services in your backend system that an administrator has set up for you. These can be services from an SAP S/4HANA system or from other SAP backend systems.
-
-Expand **SAP System > lcapteched**, and select **ADOPTION_LAB_API_BUSINESS_PARTNER**.
-
-You can now see the details of the chosen service, its entities, the properties for each entity, and general data about the service.<br>
-Click **Add External Data Model** in the upper-right corner of the screen.<br>
-This adds the chosen service to you project.
-
-![](vx_images/598492050897106.png)
-
-Return to the **Storyboard**. After a couple of seconds, the new service is displayed in the **External Resources** tile.
-
-![](vx_images/234222255270663.png)
-
-##### Associate a Business Partner Entity with the Incidents Entity
-
-From the **Storyboard**, under **Data Models**, select an entity and click **Open in Graphical Modeler** to get back to the graphical modeler.
-
-![](vx_images/367782484117154.png)
-
-From the **Incidents** entity, click  the **Add Relationship** icon.<br>
-
-
-![](vx_images/84863615669318.png)
-
-This creates a new association to a Business Partner entity. However, we don't see the Business Partner on the canvas. This is because it is in a different namespace than our own Incidents entity.
-
-A new dialog appears.<br>
-1. From the **Target Entity** dropdown list, select **API_BUSINESS_PARTNER-A_BusinessPartner**. <br>
-2. Change the suggested **Property Name** to **customer**. <br>
-3. Leave all the other suggestions (**Association** and **To-One**) as they are, and click **Create**.
-
-![](vx_images/96112304543482.png)
-
-You can now see the final data model:
-
-![](vx_images/447214291160287.png)
-
-
-## Summary
-
-You have added an external reference to the SAP S/4HANA Cloud backend system and connected it to your **Incidents** data model.
+# 练习2 - 引用SAP S/4HANA Cloud服务到数据模型中
 
 ---
 
-### Add Sample Data
+在本练习中，我们将添加SAP S/4HANA Cloud服务Business Partner到项目，并将其关联至我们的事件管理模型。
+
+![](vx_images/325096176622878_1.png)
+
+![](vx_images/180396878915669_1.png)
+
+##### 发现并添加SAP S/4HANA Cloud服务到数据模型中
+
+从**Storyboard**标签页，点击外部资源图标上的"+"按钮。这将打开左侧的**“服务中心”**。
+
+![](vx_images/593987854808584.png)
+
+在“服务中心”中，你可以看到"SAP系统"节点。技术上来说，它包含了管理员为你在后端系统中设置的OData服务的目的地。这些服务可以来自SAP S/4HANA系统或者其他SAP后端系统。
+
+展开**SAP System > lcapiac_adoptionlab**, 并选择 **ADOPTION_LAB_API_BUSINESS_PARTNER**。
+
+现在你可以看到所选服务的详细信息，包括实体、每个实体的属性以及关于服务的一般数据。
+
+点击屏幕右上角的“添加外部数据模型”。
+
+这将把所选服务添加到你的项目中。
+
+![](vx_images/49961542591782.png)
+
+选择目标项目，将服务添加到你的 CAP 项目中
+![](vx_images/45505314703054.png)
+返回到**Storyboard**标签页。几秒钟后，新的服务将在“外部资源”图标中显示。
+
+![](vx_images/485882600201697.png)
+
+##### 将业务伙伴实体关联至事件管理实体
+
+从**Storyboard**, 在数据模型下选择一个实体，并点击“以图形建模器打开”以便回到图形化编辑界面。
+
+![](vx_images/359863740274466.png)
+
+将OData Service的元数据导入
+![](vx_images/419995379020466.png)
+
+![](vx_images/388815178194046.png)
+
+选择 A_BusinessPartner实体
+![](vx_images/412734549843368.png)
+
+从“事件”实体中，点击添加关系图标。
+![](vx_images/474593989098770.png)
+
+这将创建一个新的关联至业务伙伴实体。然而，在画布上你并没有看到业务伙伴实体，这是因为它的命名空间不同于我们的事件实体。
+
+新的对话框出现。
+1. 从目标实体下拉列表中选择**API_BUSINESS_PARTNER-A_BusinessPartner**。
+2. 将建议的属性名称改为**customer**。
+3. 确保所有其他建议（Association和To-One）不变，并点击“创建”。
+
+![](vx_images/518014651964712.png)
+
+此时，你可以看到最后的数据模型：
+![](vx_images/397136985993171.png)
+
+## 总结
+
+你现在已经添加了一个对外部的引用到你的SAP S/4HANA Cloud后端系统，并将其连接至你的“事件管理”数据模型。
+
+---
+
+### 添加示例数据
+
+我们现在将使用一些示例数据填充我们的数据模型以便测试我们的服务。请注意，尽管名为示例数据，其实它有两种类型：
+- 固定值，是应用程序的一部分，并应该在部署时一同部署。示例：如果没有固定的一套紧急程度，则使用固定的值。
+- 示例数据，仅用于测试你创建的服务和应用程序，并不应包含在生产部署中。
+
+在根目录下创建“/test/data”文件夹，同时创建4个CSV文件：**iac_adoptionlab-Conversations.csv**，**iac_adoptionlab-Customers.csv**，**iac_adoptionlab-Incidents.csv**，**iac_adoptionlab-Urgency.csv**
+![](vx_images/503902678831672.png)
+
+示例数据编辑器打开。
+
+在“descr”字段中，分别为每一行输入Low, Medium和High。
+
+```
+code,name,descr
+L,Low,Low
+M,Medium,Medium
+H,High,High
+```
+
+![](vx_images/273317007786213.png)
 
 
 
-We will now populate our data model with some sample data so that we can test our service. Note that even though it says sample data, the data can be of two types:
-- Fixed values that are part of your application and should be deployed along with the application. An example could be the data for **Urgency** if there is only a fixed set of urgencies that cannot be changed
-- Sample data that is only used to test the services and applications that you create and that should not be part of a productive deployment.
-
-Go to the **Storyboard** and from the **Data Models** tile, click the **Urgency** entity, and select **Add Sample Data**.<br>
-The Sample Data Editor opens.
-
-![](vx_images/391663762569858.png)
 
 
-Click **Add**.<br>
-Leave the **name** field empty.<br>
-In the **descr** field, enter Low, Medium and High for each row respectively.
+现在我们将从一个文件导入数据至**A_BusinessPartner**实体。
 
-![](vx_images/32702649897692.png)
-
-Now we will import data from a file to the **A_BusinessPartner** entity.
-
-Open the [Customers](https://robin-qiu.github.io/BTP-CAP-Development-with-SAP-Build-Code---Bring-Your-Own-Tenant/vx_attachments/477573873607615/customers.csv ':include') :floppy_disk::floppy_disk::floppy_disk: file, and click the **Download** icon.
-
-Alternatively, using a local text editor, create a local file named `customers.csv`.<br>
-Add the following content to the file and save it locally:
+打开 `iac_adoptionlab-Customers.csv`，使用本地文本编辑器。
+将以下内容添加到文件中并保存：
 ```
 BusinessPartner,FirstName,LastName
 1001036,Daniel,Watts
@@ -93,19 +106,16 @@ BusinessPartner,FirstName,LastName
 1001039,Sunny,Sunshine
 ```
 
-From the editor, select **A_BusinessPartner** and click **Import**.<br>
-From the file selection dialog box that opens, select the 'customers.csv' file that you created.<br>
-The data is added.
+![](vx_images/454118547008104.png)
 
-![](vx_images/441683903048179.png)
 
-Now we will import data from a file to **Incidents** entity.
+![](vx_images/441683903048179_1.png)
 
-Open the [Incidents](https://robin-qiu.github.io/BTP-CAP-Development-with-SAP-Build-Code---Bring-Your-Own-Tenant/vx_attachments/477573873607615/incidents.csv ':include') :floppy_disk::floppy_disk::floppy_disk: file, and click the **Download** icon.
+现在我们将从文件导入数据至**Incidents**实体。
 
-Alternatively, using a local text editor, create a local file named `incidents.csv`.
-Add the following content to the file and save it locally:
 
+用本地文本编辑器，创建一个名为`iac_adoptionlab-Incidents.csv`的本地文件。
+将以下内容添加到文件中并保存：
 ```
 ID,title,urgency_code,customer_BusinessPartner
 3b23bb4b-4ac7-4a24-ac02-aa10cabd842c,Inverter not functional,H,1001036
@@ -114,19 +124,14 @@ ID,title,urgency_code,customer_BusinessPartner
 3583f982-d7df-4aad-ab26-301d4a157cd7,Solar panel broken,H,1001039
 ```
 
-From the editor, select **Incidents** and click **Import**.<br>
-From the file selection dialog box that opens, select the 'incidents.csv' file that you created.<br>
-The data is added.
+![](vx_images/418285655148602.png)
 
-![](vx_images/36722720545199.png)
 
-For the last step, we will import data from a file to the **Conversations** entity.<br>
+最后一步，我们将从文件导入数据至**Conversations**实体。
 
-Open the [Conversations](https://robin-qiu.github.io/BTP-CAP-Development-with-SAP-Build-Code---Bring-Your-Own-Tenant/vx_attachments/477573873607615/conversations.csv ':include') :floppy_disk::floppy_disk::floppy_disk: file, and click the **Download** icon.<br>
 
-Alternatively, using a local text editor, create a local file named `conversations.csv`.<br>
-Add the following content to the file and save it locally:
-
+用本地文本编辑器，创建一个名为`iac_adoptionlab-Conversations.csv`的本地文件。
+将以下内容添加到文件中并保存：
 ```
 ID,incidents_ID,timestamp,author,message
 2b23bb4b-4ac7-4a24-ac02-aa10cabd842c,3b23bb4b-4ac7-4a24-ac02-aa10cabd842c,1995-12-17T03:24:00Z,Harry John,Can you please check if battery connections are fine?
@@ -135,195 +140,177 @@ ID,incidents_ID,timestamp,author,message
 9583f982-d7df-4aad-ab26-301d4a158cd7,3ccf474c-3881-44b7-99fb-59a2a4668418,2022-09-04T13:00:00Z,Bradley Flowers,What exactly is wrong?
 ```
 
-From the editor, select **Conversations** and click **Import**.<br>
-From the file selection dialog box that opens, select the 'conversations.csv' file that you created.<br>
-The data is added.
+![](vx_images/527316717293663.png)
 
-![](vx_images/455493254271249.png)
 
-## Summary
+## 总结
 
-We have now added some sample data to two data models that we can use later to test the service that we will create.
-
+我们现在将一些示例数据添加到了两个数据模型中，以便我们在之后测试我们将要创建的服务时使用。
 
 ---
 
+### 创建服务(API)
 
-### Create a Service (API)
+在数据模型(持久层)创建之后，我们现在将选择对外暴露的功能作为API。这个API可以被UI应用程序、工作流等消费。为此，我们将多个实体添加到服务中。CAP将自动通过OData服务暴露该服务。
 
+##### 创建新的服务实体
 
-After the creation of the data model (persistence layer), we will now select what to expose to the outside world as an API. This API can then be consumed by UI apps, workflows, etc. For this purpose, we will add several entities to a service. CAP will expose this service automatically as an OData service.
+我们将添加4个实体至服务中：Customers（客户）、Incidents（事件）、Conversations（对话）以及Urgency（紧急程度）。
 
-##### Create New Service Entities
+回到SAP Business Application Studio中的**Storyboard标签页。**
 
-We will add 4 entities to the service: Customers, Incidents, Conversations, and Urgency.
-
-Go back to the **Storyboard** tab in SAP Business Application Studio.
-
-In the **Storyboard**, from the **Services** tile, click **+** button, and input service name as **Processor**.
-The CDS Graphical Modeler opens.
-
-![](vx_images/184032481646313.png)
-
-From the toolbar, click **Add Entity** and click **Entity1**.
-![](vx_images/242923124964620.png)
-
-The **New Projection** dialog box opens.
+在Storyboard中，从服务图标上点击“+”按钮，并输入服务名称为**Processor**。
 
 
-From the toolbar, click **Add Entity**, and click **Entity1**.
+![](vx_images/26137781091183.png)
 
-The **New Projection** dialog box opens.
+CDS图形建模器打开。
+![](vx_images/451046397351505.png)
 
-Select the **teched.Incidents** entity, make sure that the **Enable draft editing** checkbox is selected, and click **OK**.<br>
 
-![](vx_images/259833168419462.png)
 
-The **Incidents** entity appears in the CDS Graphical Modeler.
+从工具栏中点击“添加实体”并选择“Entity1”。
 
-![](vx_images/566714115289893.png)
+**新投影对话框打开**
 
-Click **"Open Property Sheet"** icon and import the S/4HANA Cloud OData service
+选择 iac_adoptionlab.Incidents实体，确保勾选“启用草稿编辑”复选框，并点击“确定”。
 
-![](vx_images/402074199160402.png)
+![](vx_images/17286209104876.png)
 
-Browse the OData CDS file
+Incidents实体出现在CDS图形建模器中。
+
+![](vx_images/207859500782981.png)
+
+点击“打开属性表”图标，并导入S/4HANA Cloud OData服务。
+
+![](vx_images/127021618144640.png)
+
+浏览OData CDS文件。
+
 ![](vx_images/127424188057467.png)
 
-Select the **A_BusinessPartner** entity
+选择A_BusinessPartner实体。
 
 ![](vx_images/312584391425553.png)
 
+选择API_Busniess_Partner.A_BusinessPartner实体，清除“启用草稿编辑”复选框（如果未清除），并点击确定。
+A_BusinessPartner实体出现在CDS图形建模器中。
 
-Select the **API_Busniess_Partner.A_BusinessPartner** entity, clear the **Enable draft editing** checkbox if not already cleared, and click **OK**.
-The **A_BusinessPartner** entity appears in the CDS Graphical Modeler.
-
-
-1. Click the **Show Details** icon, and select the **Projection** tab.
-3. Clear the **all properties** checkbox, and select the following properties:
+1. 点击 **Add Projection** 图标。
+3. 清除 **all properties** 复选框，选择一下属性:
    
    a. BusinessPartner
     
    b. FirstName
    
    c. LastName
+![](vx_images/318774067563888.png)
 
-![](vx_images/318353620309231.png)
+4. **重要提示：更改名称为Customers**
 
-3. **IMPORTANT**: Change the name of the **A_BusinessPartner** entity to **Customers**.
+![](vx_images/352282395374797.png)
 
-![](vx_images/438594928098788.png)
+从工具栏中点击“Add Projection”。
+
+**新投影对话框打开**
+
+选择iac_adoptionlab.Conversations实体，并清除“启用草稿编辑”复选框，点击确定。
+Conversations实体出现在CDS图形建模器中。
+
+![](vx_images/171815496059394.png)
+
+从工具栏中点击“Add Projection”。
+
+**新投影对话框打开**
+
+选择iac_adoptionlab.Urgency实体，并清除“启用草稿编辑”复选框，点击确定。
+Urgency实体出现在CDS图形建模器中。
+
+![](vx_images/147472868394791.png)
+
+确认ProcessorService包含你刚刚添加的4个实体。
+
+![](vx_images/260634387480200.png)
 
 
-
-
-
-From the toolbar, click **Add Entity** and click **Entity1**.
-
-The **New Projection** dialog box opens.
-
-Select the **teched.Conversations** entity, clear the **Enable draft editing** checkbox, and click **OK**.<br>
-The **Conversations** entity appears in the CDS Graphical Modeler.
-
-![](vx_images/582693940493533.png)
-
-From the toolbar, click **Add Entity** and click **Entity1**.
-
-The **New Projection** dialog box opens.
-
-Select the **teched.Urgency** entity, clear the **Enable draft editing** checkbox, and click **OK**.<br>
-The **Urgency** entity appears in the CDS Graphical Modeler.
-
-![](vx_images/167643060220681.png)
- 
-Make sure that the **ProcessorService** contains the 4 entities that you just added.
-
-![](vx_images/317314111543434.png)
-
-##### Summary
-You have now added a **Processor** service to your project. Essentially, this service will expose your data model as an OData V4, RESTful API to your application.
+##### 总结
+你现在已将一个**处理器服务（Processor）**添加到你的项目中。基本上，这个服务将会把你的数据模型暴露为一个OData V4, RESTful API给你的应用。
 
 ---
 
+### 预览服务
 
-### Preview Your Service
+我们现在有了一个服务，可以使用演示数据和实时数据来预览它而无需部署到云中。
 
+##### 使用示例数据预览
 
+<mark>打开 package.json 文件，将cds.auth该为**“dummy”**。</mark>
+![](vx_images/570351660575169.png)
 
+从左侧的活动栏点击“运行配置”图标。这个视图打开。
+点击 “Create Configuration”，选择你的项目
+![](vx_images/329141569477902.png)
 
-Now that we have a service, we can preview it with sample data and with live data without having to deploy to the cloud. 
+确认运行配置的名称
+![](vx_images/420842251091198.png)
 
-##### Preview with Sample Data
+点击默认的运行配置：**运行 incident_managementXXX-1**。
+在打开的OData部分中，示例数据被选中。
 
-From the activity bar on the left, click the **Run Configurations** icon.
-The **Run Configurations** view opens.
+从“运行配置”视图点击“运行模块图标”。
+![](vx_images/493215417735074.png)
 
-Click the default run configuration: **Run incident_managementXXX-1**.
+等待看到像下面的控制台输出为止：
 
-In the **OData** section that opens, **Mock Data** is selected.
-
-From the **Run Configurations** view, click the **Run Module** icon.
-
-![](vx_images/137415347510788.png)
-
-Wait until see the console output like below:
 ![](vx_images/30136006762873.png)
 
-If the pop-ups are blocked by your browser, please unblock lik this:
+如果你的浏览器阻止了弹出窗口，请根据如下步骤解除：
+
 ![](vx_images/299246633708383.png)
 
-After a couple of seconds, a new browser tab opens and a screen like the one below is displayed.
+几秒钟后，一个新的浏览器标签页打开，并显示如下的屏幕
 
-> Note: If you don't get a new tab, please check whether there is a blocker running in your browser. If so, please allow the SAP Business Application Studio domain to open a new tab.
+> 注意：如果没有新的标签，请检查是否在你的浏览器中运行了阻止器。如果是，允许SAP Business Application Studio域打开一个新的标签。
 
-![](vx_images/172454412187919.png)
+![](vx_images/355632050704980.png)
 
+你可以在服务列表右侧看到包括**ProcessorService**在内的服务预览。
+从“Incidents”行，点击“以代码形式查看”的图标来预览带有示例数据的客户列表。
+客户样本数据显示出来，
+使用OData V4查询和暴露数据。请注意，这个服务从内存数据库读取数据（在预览时自动开启），因此任何对数据的更改都不会保留。
+![](vx_images/70202457115280.png)
 
-You can see a preview of the service including the **ProcessorService** in the list of services on the right-hand side.<br>
-From the **Customers** row, click the **View as code** icon to preview the list of customers with the sample data.<br>
+##### 使用实时数据预览
 
-The **Customers** sample data is displayed.<br>
-The data is queried and exposed using OData V4. Please note that this service is run from an in-memory database that is automatically opened for you during the preview, so any modification to the data will not persist.
+切换回显示你的项目的SAP Business Application Studio标签页。
+我们现在将查看第二个版本的预览，使用实时数据。这次业务伙伴的数据实际上是从SAP S/4HANA Cloud系统获取的，而不是示例数据。
 
-![](vx_images/342893437295058.png)
-
-
-##### Preview with Live Data
-
-Switch back to the tab that has SAP Business Application Studio with your project.<br>
-We will now look at the second version of the preview, which uses live data. This time, the data for the business partner is actually fetched from the SAP S/4HANA Cloud system instead of from sample data.
-
-To get there, first click the **Stop Preview** button.
-
+要进入实时数据预览，请先点击停止预览按钮。
 ![](vx_images/577664340642085.png)
 
-From the activity bar, open the **Run Configurations** view.
+从活动栏中打开“运行配置”视图。
 
-Click the **API_BUSINESS_PARTNER** run configuration.<br>
-In the **OData** section of the editor that opens, **Live Data** is selected.
+点击**API_BUSINESS_PARTNER**运行配置。
+在编辑器的OData部分中选择“实时数据”。
 
-From the **Run Configurations** view, click the **Run Module** icon.
+从“运行配置”视图点击“运行模块图标”。
 
 ![](vx_images/141003102046420.png)
 
-After a couple of seconds, a new browser tab opens and a screen like this is displayed:
+几秒钟后，一个新的浏览器标签页打开，并显示如下的屏幕：
 
 ![](vx_images/353903386155788.png)
 
-> Note: If you don't get a new tab, please check whether there is a blocker running in your browser. If so, please allow the SAP Business Application Studio domain to open a new tab.
+> 注意：如果没有新的标签，请检查浏览器是否阻止了新的标签的打开。如果是，允许SAP Business Application Studio域打开一个新的标签。
 
-A preview of the service opens and the **ProcessorService** appears in the list of services on the right-hand side.<br>
-From the **Customers** row, click the **View as code** icon to preview the list of customers.<br>
-This time you will get a lot more data than before. Also, the names are different. This is the real business partner data from the SAP S/4HANA backend.<br>
+服务预览出现，并在右侧的服务列表中显示**ProcessorService**。
+从“客户”行，点击“以代码形式查看”的图标来预览客户列表。
+这次你将得到比之前多得多的数据，并且名字也不同。这是来自SAP S/4HANA后端的真正业务伙伴数据。
 
 ![](vx_images/573263798888774.png)
 
-Go to SAP Business Application Studio, and click the **Stop Preview** button.
-
+回到SAP Business Application Studio，并点击停止预览按钮。
 ![](vx_images/103804727062761.png)
 
-
-##### Summary
-We have now previewed our service without any deployment.
-
-
+##### 总结
+我们现在已经无需部署服务就进行了预览。

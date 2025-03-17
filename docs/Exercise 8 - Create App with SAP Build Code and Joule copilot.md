@@ -1,559 +1,421 @@
 <div class="draftWatermark"></div>
 
-# Exercise 8 - Create App with SAP Build Code and Joule copilot
+# 练习8 - 使用SAP Build Code和Joule副驾创建应用程序
 
 ---
-# SAP Build Code and Joule copilot
+# SAP Build Code 和 Joule 副驾助手
+## 概述
+在这一单元中，我们要创建一个客户忠诚度计划的应用程序。客户可以通过购买产品获得积分，并可以使用这些积分进行兑换。
 
-### Overview
-In this unit, we want to create a customer loyalty program application. Customer can get bonus points for their purchases of products and can redeem these points.
+借助Joule的生成式AI能力在SAP Build Code中创建应用程序。
 
-Generative AI powered Development using Joule in SAP Build Code.
-
-1. Data Model and Service Creation
-1. Sample Data
-1. Application Logic
+1. 数据模型和服务创建
+2. 示例数据
+3. 应用逻辑
 
 <br>
 <br>
 
-**Introduction to SAP Build Code**
+### SAP Build Code 简介
 
-SAP Build Code is a turn-key development environment that combines runtime and design time capabilities with built-in solutions for DevOps and Application Lifecycle Management.
+SAP Build Code 是一个集成运行时和设计时间能力的全栈开发环境，内置了DevOps和应用生命周期管理解决方案。
 
 ![](vx_images/586596853168213.jpg)
 
+### SAP Build Code 的优势
 
-**Benefits of SAP Build Code**
+* 通过与SAP Build Code并行扩展来实现干净的核心
+* 使用生成式AI、生产力工具和应用生命周期管理优化开发效率
+* 允许开发人员使用他们选择的编程语言构建和扩展强大的端到端业务应用程序
+* 实现经典开发工具与低代码开发工具之间的互操作性
 
-* Achieve a clean core by developing side-by-side extensions with SAP Build Code
-* Optimize developer efficiency with generative AI, productivity tools, and application lifecycle management
-* Enable developers to build and extend powerful end-to-end business applications with programming language of choice
-* Leverage interoperability between classic development and low-code development tools
+### SAP Build Code的功能特点
+* 通过稳定的未来保障基础来区分云解决方案，使解决方案具备未来安全性，并能在不同的S/4HANA版本中工作且包含质量保证选项
+* 允许开发人员更快更智能的编码，代码生成基于生成式AI，简化应用生命周期管理
+* 应用和扩展开发，集成SAP及非SAP系统
+* 通过中央大堂提供给所有类型的开发人员便捷访问，实现融合开发
 
-**Key capabilities of SAP Build Code**
-* Differentiate cloud solution with stable and future-proof foundation, solution becomes future proof and works with different editions of S/4HANA, and quality assurance options included
-* Enable developers to code faster and smarter, code generation based on generative AI, Ease of Application Lifecycle Management
-* Application and extension development, Integrate with SAP and non-SAP systems
-* Easy access for all types of developers with centralized Lobby, for Fusion Development
+### 创建项目
+这个教程的起点是SAP Build的大堂，这是所有SAP Build产品的中央入口点。
 
+1. 启动SAP Build大堂（如果你还没有在大堂里）
+2. 点击创建按钮
+   ![](vx_images/197476675768242.jpg)
 
-### Create Project
+3. 选择构建应用
+   ![](vx_images/294907292022514.jpg)
 
+4. 选择SAP Build Code
+   ![](vx_images/377155954262791.jpg)
 
-The starting point for this tutorial is the lobby of SAP Build, the central entry point for all SAP Build products.
+5. 选择全栈应用
+   ![](vx_images/203846331177604.jpg)
 
-1. Launch the SAP Build Lobby (if you are not already in the Lobby)
-2. Click on the Create button
+6. 在下一个屏幕上输入以下信息：
+   | 输入字段   |           输入值                   |
+   | --------------------------| ----------------------------------------------|
+   | 项目名称 | Customer_Loyal_XXX                            |
+   | 描述       | 客户忠诚计划模型和服务的名称 XXX |
 
-![](vx_images/197476675768242.jpg)
+   ![](vx_images/169730972959447.png)
+   
+7. 点击创建按钮。
+   * 项目的创建可能需要一分钟的时间。
 
+8. 点击Customer_Loyal_XXX项目。
+   ![](vx_images/555362819544506.jpg)
 
+9. 系统可能会提示你确认Cookie设置，请点击确定（或打开设置以更新设置）。
+   ![](vx_images/357583453270556.png)
 
-
-3. Select Build an Application
-
-![](vx_images/294907292022514.jpg)
-
-
-4. Select SAP Build Code
-
-![](vx_images/377155954262791.jpg)
-  
-
-5. Select Full-Stack Application
-
-![](vx_images/203846331177604.jpg)
-
-
-6. On the next screen, enter the following:
-
-|  Input Field   |                   Input Value                   |
-| -------------- | ----------------------------------------------- |
-| Project Name   | Customer_Loyal_XXX                              |
-| Description	 | Customer Loyalty Program Model and Services XXX |
-
-
-![](vx_images/169730972959447.png)
-
-
-7. Click the Create button.
-
-* The creation of the project can take up to 1 minute.
-
-8. Click on the Customer_Loyal_XXX project.
-
-![](vx_images/555362819544506.jpg)
-
-
-9. You might be asked to confirm the cookies settings by clicking OK (or Open Settings to update the settings)
-
-
-![](vx_images/357583453270556.png)
-
-10. SAP Build Code will be opened, based on SAP Business Application Studio - in the background.
-
-* Please allow some time for SAP Build Code to open!
-![](vx_images/243353682117047.jpg)
-
+10. SAP Build Code 将基于SAP Business Application Studio打开。
+  * 请等待一段时间以使Build Code 打开！
+   ![](vx_images/243353682117047.jpg)
 
 ---
 
-### Create Data Entities with Joule
+### 使用Joule创建数据实体
+在本课中，我们将为客户忠诚度计划应用创建数据模型和服务。
 
-In this lesson, we will create the data model and the services for the customer loyalty program application.
+我们可以通过Storyboard绘制视觉模型或手动编写代码来创建数据模型，但我们将使用Joule和SAP Build Code的生成式AI能力来生成代码。此方法可以显著减少开发客户忠诚度计划应用所需的时间和精力。
 
-We could create the data model visually from the Storyboard or by writing the code manually. However, we are going to use the **generative AI** capabilities of **Joule and SAP Build Code** to generate the code. Thus, significantly **reducing the time and effor**t required to develop the customer loyalty program application.
-
-1. Launch the Joule digital assistant.
-
-* Please wait for the digital assistant to open. If it fails to open then please refresh your browser.
+1. 启动Joule数字助手。
+  * 请等待数字助手打开。如果无法打开，请刷新你的浏览器。
 
 ![](vx_images/127936581646904.png)
 
-
-2. Please ask Joule to generate a CAP application by entering **/cap-gen-app** into the prompt.
+2. 让Joule生成CAP应用，请在提示框中输入**/cap-gen-app**。
 
 ![](vx_images/53742961754897.png)
 
+4. 复制并粘贴提示框中的内容到Joule的“Ask Joule”区域中生成数据模型和服务：
+> 设计一个客户忠诚度计划应用。定义三个数据实体：Customers（顾客）、Purchases（购买）和Redemptions（兑换）。每个顾客必须包含如下字段：姓名、邮箱、七位数字的客户号码、总购入金额（整数）、累计积分奖励点数和已使用积分奖励点数。除了姓名和邮箱（存储为字符串），所有字段均为整数。购买包含如下字段：购入金额、积分奖励点数和选定产品（除了选定的产品其他均为整数）。兑换包含一个字段：已使用金额（整数），每个购买或兑换都关联到一位顾客。请使用关联而不是组合。
 
-4. Generate the data model and services by copying and pasting the prompt into the box where it says ‘Ask Joule’.
+5. 点击“生成”。
+   ![](vx_images/41854164674294.png)
 
->   
-> Design a customer loyalty program application. Define 3 data entities: Customers, Purchases and Redemptions. Each customer must have the following fields: name, email, 7-digit customer number, total purchase value, total reward points, ‘total redeemed reward points’. All fields for each customer should be integer except name and email that will be stored as string. Purchases should include the following fields: purchase value, reward points and selected product. All fields in Purchases must be integer except selected product. Redemptions must have 1 field in integer: redeemed amount. Each purchase and redemption will be associated to a customer. Use Association instead of compositions.
->   
+6. 现在你的提示框下方会生成代码。
+   ![](vx_images/125626629808930.png)
 
-
-5. Click Generate.
-
-![](vx_images/41854164674294.png)
-
-6. The code should be generated now below your prompt.
-
-![](vx_images/125626629808930.png)
-
-
-7. Accept the Code by clicking the Accept icon.
-
-* Once you accept the code, you will see the update on the right side under the Storyboard tab.
-* It can take up to 2 minutes for Joule to create the data models and services for you.
+7. 点击接受图标以确认代码。
+  * 接受代码后，你将在右侧的Storyboard标签页看到更新内容。
+   Joule将在2分钟内为你创建数据模型和服务。
 
 ![](vx_images/482985509683569.png)
 
-
 ---
 
+### 使用Joule增强数据
+在本课中，我们将使用Joule和SAP Build Code的生成式AI能力来生成一些示例数据。这些示例数据将用于测试和预览我们的客户忠诚度计划应用的后端服务。
 
-# Enhance your Data with Joule
-
-In this lesson, we are going to use the generative AI capabilities of Joule and SAP Build Code to generate some sample data. This sample data will be used to test and preview the backend service of our customer loyalty program application.
-
-### Enhance Customers Initial Data
-1. Open the the **Data Editor**. Navigate to **Open Editor**, then select **Sample Data**.
+#### 增强顾客初始数据
+1. 打开“数据编辑器”。导航至“打开编辑器”，然后选择“样本数据”。
 
 ![](vx_images/119833407682871.png)
 
-2. Select the **Customers** data entity, then select the **INITIAL DATA** tab.
+2. 选择“顾客”数据实体，然后点击“初始数据”标签页。
 
 ![](vx_images/408741525965211.png)
 
-3. Enter **5** into the **Number of rows** field. Select the **Add** button to add 5 more rows to the entity.
+3. 输入“5”到“行数”的字段。点击“添加”按钮以增加该实体的5条记录。
 
 ![](vx_images/107321469420053.png)
 
-4. Select **Enhance**. This will open again Joule to modify the sample data.
+4. 点击“增强”。这将再次打开Joule以修改示例数据。
 
 ![](vx_images/468752316290484.png)
 
-5. **Copy and paste** the following Prompt into Joule and click **Generate**:
-
-> Enhance my sample data with meaningful data. All customer numbers will be 7 digits and one customer must use the customer number 1200547. No field may be empty. Total purchase value must be smaller than 10000. Total reward points and total redeemed reward points both must be unround and different and always sum to one-tenth of total purchase value for each customer.
-
+5. 复制以下提示内容并粘贴到Joule，然后点击“生成”：
+> 用有意义的数据增强我的示例数据。所有的客户号码均为七位数字，其中一个顾客必须使用1200547这个编号。任何字段都不能留空。总购入金额必须小于10000，积分奖励点数和已使用积分奖励点数均为非零且不同，并且每个客户的总购入金额的十分之一。
 
 ![](vx_images/351723722964513.png)
 
+* 你可以看到你的提示框下方的顾客名称、电子邮件地址和购买金额已被创建。
 
-* Below your prompt, you can see the customer names, email adresses and purchases are created.
+6. 点击“接受”以批准Joule生成的示例客户数据。
+   ![](vx_images/338272400160993.png)
 
-6. Select **Accept** to approve the sample customer data generated by Joule.
-
-![](vx_images/338272400160993.png)
-
-
-7. You see that the customer Number of one of the customers in the list has been updated to **1200547**.
-
-
+7. 你将看到列表中的一个客户编号已经被更新为 **1200547**。
 
 ![](vx_images/150612189058058.png)
 
-
-### Enhance Purchases Initial Data
-
-1. Select the **Purchases** data entity.
-
-2. Select the **INITIAL DATA** tab.
-
-3. Enter **5** into the **Number of rows** field.
-
-4. Select the **Add** button to add 5 more rows to the entity.
+#### 增强购买初始数据
+1. 选择“购买”数据实体。
+2. 点击“初始数据”标签页。
+3. 输入“5”到“行数”的字段。
+4. 点击“添加”按钮以增加该实体的5条记录。
 
 ![](vx_images/431502492426144.png)
 
-5. Assign a unique customer ID to each purchase entry.
+5. 赋予每个购买记录唯一的客户ID。
 
 ![](vx_images/345201521309822.png)
 
-6. Select **Enhance**.
+6. 点击“增强”。
 
-7. Copy the following text for the Prompt in Joule
+7. 复制以下文本作为Joule提示内容：
+> 使用办公电子产品的示例数据生成有意义的数据。每笔“购买金额”的范围在50到1000之间，确保每个“积分奖励点数”始终是购买金额的十分之一。确保“客户”字段已填充。
 
-> Enhance my sample data with meaningful data using electronic office products. Each ‘purchaseValue’ will be between 50 and 1000. Ensure that each ‘rewardPoints’ is always one-tenth of the ‘purchaseValue’. Ensure that the ‘customer’ field is populated.
-
-8. Paste the copied text into the Joule prompt, click **Generate**.
+8. 将复制的文本粘贴到Joule提示框中，点击“生成”。
 
 ![](vx_images/113492829099379.png)
 
+* 等待Joule ... 思考... 并生成数据。AI的生成可能需要一些时间。
 
-* Wait for Joule … *Thinking* … and the data to be generated. The AI generation may take a little while.
+9. 接受Joule生成的代码。
+   ![](vx_images/454122548511379.png)
 
-9. Accept the code created by Joule.
-
-![](vx_images/454122548511379.png)
-
-10. The initial data for the **Purchases** entity has been updated.
+10. 更新“购买”的初始数据。
 
 ![](vx_images/235793007763464.png)
 
-### Enhance Redemptions Initial Data
-
-1. Select the **Redemptions** data entity.
-
-2. Select the **INITIAL DATA** tab.
-
-3. Enter **5** into the **Number of rows** field.
-
-4. Select the **Add** button to add 5 more rows to the entity.
+#### 增强兑换初始数据
+1. 选择“兑换”数据实体。
+2. 点击“初始数据”标签页。
+3. 输入“5”到“行数”的字段。
+4. 点击“添加”按钮以增加该实体的5条记录。
 
 ![](vx_images/480783634708974.png)
 
-5. Assign a unique customer ID to each record.
+5. 赋予每个记录唯一的客户ID。
 
 ![](vx_images/263322977623469.png)
 
-6. Select **Enhance**.
+6. 点击“增强”。
 
-7. Use the following Prompt in Joule:
+7. 使用以下提示内容：
+> 确保每笔兑换金额不相同且在10到100之间。
 
-> Ensure that each redeemed amount is different and between 10 and 100.
-
-8. Click **Generate**. This may take a little time.
+8. 点击“生成”。此过程可能需要一些时间。
 
 ![](vx_images/460213679916260.png)
 
+9. 接受Joule生成的代码。
+   ![](vx_images/132414545510681.png)
 
-9. **Accept** the code created by Joule.
-
-![](vx_images/132414545510681.png)
-
-10. The initial data for the **Redemptions** entity has been updated.
+10. 更新“兑换”的初始数据。
 
 ![](vx_images/377152774133888.png)
 
-
-
-
 ---
 
+### 使用Joule创建后端逻辑
+我们已经使用Joule创建了实体、服务和示例数据。在本课程中，我们将添加一些逻辑到应用中。我们希望计算每个客户的购买积分，并提供客户使用这些积分的逻辑。
 
-# Create Backend Logic with Joule
-
-
-We have already created the entities, services and sample data with Joule. In this lesson, we will add some logic to our application. We would like to calculate the bonus points for each customer purchase. Additionally, we want to provide the logic for customers to redeem their bonus points.
-
-### Purchases Backend Logic
-1. In the **Storyboard**, click on one of the entities under **Services** and **Open in Graphical Modeler**
+#### 购买后端逻辑
+1. 在Storyboard中点击服务下的一个实体，并“以图形建模器打开”
 
 ![](vx_images/337123132255085.png)
 
+2. 点击标题选择“购买”实体。
+   * 注意：如果你看不到“购买”实体，可能需要缩放视图。
 
-2. Select **Purchases** entity by clicking on the title.
+3. 点击“添加逻辑”。
 
-* Note: if you can not see the Purchases entity you may have to zoom out the view.
+   ![](vx_images/270594874622771.png)
 
-3. Click on **Add Logic**.
+4. 保持默认值不变，并点击“添加”。
 
+   ![](vx_images/592245476915562.png)
 
-![](vx_images/270594874622771.png)
+5. 选择标准事件“创建”。
+   * 这意味着当新购买发生时，此逻辑将自动执行。
 
+6. 导航至“打开代码编辑器> 应用逻辑”。
 
-4. Leave everything by the default value and click on **Add**
+   ![](vx_images/453483400435578.png)
 
-![](vx_images/592245476915562.png)
+7. 使用以下提示内容，在Joule中创建后端逻辑：
+> 每次购买的积分奖励点数为其购入金额的十分之一。每个购入金额会添加到相关的客户总购入金额中。每个积分奖励点数会添加到相关的客户的累计积分奖励点数中。
 
+8. 点击“生成”。
 
-5. Select the Standard Event **Create**.
+   ![](vx_images/427444696065977.png)
 
-* That means this logic will be automatically executed if a new purchase is done.
+9. Joule生成了以下逻辑：
+   * 检查客户是否存在
+   * 计算购入金额的积分奖励点数
+   * 更新客户的总购入金额和累计积分奖励点数
 
+10. 点击“接受”以保存Joule生成的代码。
+    * Joule可能为相同的提示生成不同的代码，但只要达到相同的结果即可忽略其差异。
 
-6. Go to **Open Code Editor > Application Logic**.
+   ![](vx_images/552223300559334.png)
 
-* This will open Joule again to create the logic for us.
+#### 兑换后端逻辑
+接下来我们处理兑换。
 
-![](vx_images/453483400435578.png)
+1. 返回到服务界面。
+2. 点击“兑换”的标题以添加逻辑。
 
+   ![](vx_images/21235993065279.png)
 
-7. Use the following Prompt in Joule to create a backend logic:
+4. 点击“添加”。
 
-> Reward points of each purchase will be the one-tenth of the purchase value. Each purchase value will be added to the total purchase value of the related customer. Each reward points will be added to the total reward points of the related customer.
+   ![](vx_images/372634497558636.png)
 
+5. 选择“创建”。
 
-8. Click **Generate**.
+6. 导航至“打开代码编辑器”中的应用逻辑。
 
-![](vx_images/427444696065977.png)
+   ![](vx_images/235963709672633.png)
 
+7. 使用以下提示内容在Joule中创建后端逻辑：
+> 从相关的客户的累计积分奖励点数减去兑换金额。将相同的金额添加到该客户已使用积分奖励点数中。
 
-9. Joule created the following logic:
+   ![](vx_images/33424744587762.png)
 
-* Check if the customer exists
-* Calculates the rewardPoints from the purchase value
-* Updates the total purchase value and the total reward points in the customers entity
-10. **Accept** the code created by Joule.
+8. 点击“接受”以保存Joule生成的代码。
+   ![](vx_images/229864663938016.png)
 
-* Joule may generate different codes for the same prompt. If the code for the backend logic differs but achieves the same result, you can ignore the variation and continue working on the exercise.
+9. 查看生成的代码，它包含了一些逻辑来检查客户是否有足够的积分进行兑换。
 
-![](vx_images/552223300559334.png)
+   * Joule可能为相同的提示生成不同的代码，只要其功能相同即可忽略差异并继续练习。
 
-
-### Redemptions Backend Logic
-Now we continue with the Redemptions.
-
-1. Go back to **service.cds** tab.
-
-1. Select **Redemptions** entity by clicking on the title.
-
-1. Click on **Add Logic**.
-
-![](vx_images/21235993065279.png)
-
-
-4. Click **Add**.
-
-![](vx_images/372634497558636.png)
-
-
-5. Select **Create**.
-
-6. Go to **Application Logic** under **Open Code Editor**
-
-![](vx_images/235963709672633.png)
-
-
-7. Use the following Prompt in Joule to create a backend logic:
-
-> Deduct the redemption amount from ‘totalRewardPoints’ of the related customer. Add the same redemption amount to the ‘totalRedeemedPoints’ of the related customer.
-
-
-![](vx_images/33424744587762.png)
-
-
-8. **Accept** the code created by Joule.
-
-![](vx_images/229864663938016.png)
-
-9. Have a closer look at the generated code. It includes some logic to check if a customer has enough points for the redemption.
-
-* Joule might generate different codes for the same prompt. So, you might have a different code for the backend logic which is completely fine if it does the same job. You can ignore this and keep working on the exercise.
-
-
-10. Go back to **Storyboard** and open **Service Center**.
-
-![](vx_images/528483625249717.png)
-
+10. 返回到Storyboard，并打开服务中心。
+   ![](vx_images/528483625249717.png)
 
 ---
 
+### 添加外部数据资源
+在本课中，我们将连接到S4/HANA系统以获取与产品相关的数据。
 
-### Add External Data Resource
+下载示例目标文件 S/4HANA Cloud [ADOPTION_LAB_API_PRODUCT](https://robin-qiu.github.io/BTP-CAP-Development-with-SAP-Build-Code---Bring-Your-Own-Tenant/vx_attachments/477573873607615/ADOPTION_LAB_API_PRODUCT)
 
-In this lesson, we will connect to an S4/HANA system to retrieve the product related data.
+1. 将目标 ADOPTION_LAB_API_PRODUCT 导入你的BTP系统。
+   ![](vx_images/268533670435638.png)
 
-Download a sample destination for S/4HANA Cloud [ADOPTION_LAB_API_PRODUCT](https://robin-qiu.github.io/BTP-CAP-Development-with-SAP-Build-Code---Bring-Your-Own-Tenant/vx_attachments/477573873607615/ADOPTION_LAB_API_PRODUCT ':include')  :truck::truck::truck:.
+1. 在“服务中心”中，前往“SAP系统”，找到BTP目标ADOPTION_LAB_API_PRODUCT（S/4产品）。
+2. 选择“添加到CAP项目”
 
-1. Import destination ADOPTION_LAB_API_PRODUCT into your BTP 
+**注意**: 此目标已由你的子账户管理员配置。该目标连接到SAP Business Hub的沙盒API。有关此API的更多信息，请访问[SAP Business Accelerator Hub](https://api.sap.com/api/API_PRODUCT_SRV/overview)
 
-![](vx_images/268533670435638.png)
+   ![](vx_images/25655210989567.png)
 
-1. In **Service Center** go to **SAP System** and find the BTP destination **ADOPTION_LAB_API_PRODUCT** (S/4 Product).
+3. 转到Storyboard，检查外部资源是否已更新。
+   **注意**: 更新可能需要一些时间！
 
-2 Select **Add to CAP Project**
+   ![](vx_images/482855277645426.png)
 
-**Note**: This destination is already configured by your subaccount admin. The destination is connected to a Sandbox API from SAP Business Hub. For more information about the api go to the SAP Business Accelerator Hub: https://api.sap.com/api/API_PRODUCT_SRV/overview
+4. 转到服务界面，并添加实体。
+   你可以将新实体放置在任何位置。
 
-![](vx_images/25655210989567.png)
+   ![](vx_images/413955362650241.png)
 
-
-3. Go to **Storyboard** and check if the **External Resource** got updated.
-
-**Note**: It may take a short time to update!
-
-![](vx_images/482855277645426.png)
-
-
-4. Go to **service.cds** tab and Add Entity
-
-* You can drop the new entity anywhere
-
-![](vx_images/413955362650241.png)
-
-
-5. Select the data entity: **ADOPTION_LAB_API_PRODUCT.A_ProductBasicText**
-
-* **Disable** the **Enable draft editing** option.
-
-6. Click **Save**
-
-![](vx_images/490104387866818.png)
+5. 选择数据实体：**ADOPTION_LAB_API_PRODUCT.A_ProductBasicText**
+   * 禁用“启用草稿编辑”选项。
+6. 点击保存
+   ![](vx_images/490104387866818.png)
 
 ---
 
+### 用户界面应用
+在这一课中，你将设计一个用户界面向客户展示我们为忠诚度项目应用开发的内容。
 
-### UI Application
+1. 返回到Storyboard，并通过选择“+”号来添加第一个UI应用。
+   ![](vx_images/115205804971320.jpg)
 
-In this lesson, you’ll design a user interface to showcase and test the content we’ve developed for the customer loyalty program application.
+2. 我们将从数据实体“购买”的用户界面开始。输入以下值：
+   显示名称：**购买**
+   描述： **管理购买**
+   数据源： **customer_loyal_XXXSrv**
 
-1. Go back to the **Storyboard** and **add a first UI** application by selecting the **(+)**
-
-![](vx_images/115205804971320.jpg)
-
-2. We will start with the user interface for the data entity *Purchases*. Enter the following values:
-Display name: **Purchases**
-Description: **Manage Purchases**
-Data Source: **customer_loyal_XXXSrv**
 ![](vx_images/265166972065888.jpg)
 
-3. Select **Next**
+3. 点击“下一步”。
+   ![](vx_images/586037151200874.png)
 
-![](vx_images/586037151200874.png)
+4. 选择“基于模板的响应式应用”作为UI应用类型。
+   ![](vx_images/250106459463611.jpg)
 
-4. Select **Template-Based Responsive Application** as the UI Application type.
+5. 点击“下一步”。
+   ![](vx_images/517215672261806.png)
 
-![](vx_images/250106459463611.jpg)
+6. 选择“列表报告页面”。
+   ![](vx_images/242806920304772.jpg)
 
-5. Select **Next**
+7. 点击“下一步”。
+   ![](vx_images/582926139322076.png)
 
-![](vx_images/517215672261806.png)
+8. 选择“购买”实体。
+9. 点击完成。
 
-6. Select **List Report Page**
+   ![](vx_images/388576499026545.jpg)
 
-![](vx_images/242806920304772.jpg)
+10. 如果需要，关闭页面映射。
+重复相同步骤以处理“客户”和“兑换”实体。
 
-7. Select **Next**
+- 客户：
+  - 显示名称：**顾客**
+  - 描述： **管理顾客**
+  - 数据源： **customer_loyal_XXXSrv**
+- UI应用类型：**基于模板的响应式应用**
+- UI应用模板：**列表报告页面**
+- 主实体：**顾客**
 
-![](vx_images/582926139322076.png)
+    - 等待UI创建完成。你将看到一条消息，表示文件已生成。
 
-
-8. Select the **Purchases** entity
-
-9. Select **Finish**
-
-![](vx_images/388576499026545.jpg)
-
-
-
-10. Close the Page Map if needed.
-Repeat the same steps with the *Customer* and *Redemption* entity.
-
-Customer:
-
-* Display name: **Customers**
-* Description: **Manage Customers**
-* Data Source: **customer_loyal_XXXSrv**
-* UI Application type: **Template-Based Responsive Application**
-* UI Application Template: **List Report Page**
-* Main Entity: **Customers**
-> 
-> Wait for the UI to create.
->
-
-Redemptions:
-
-* Display name: **Redemptions**
-* Description: **Manage Redemptions**
-* Data Source: **customer_loyal_XXXSrv**
-* UI Application type: **Template-Based Responsive Application**
-* UI Application Template: **List Report Page**
-* Main Entity: **Redemptions**
-> 
-> Wait for the UI to create. You shoud see a message, that the files have been generated.
-> 
-
-![](vx_images/382406083918458.png)
-
-
-### Modify the UI for the Purchases
-Now we are going to modify the UI for the purchases. We will include the products from S/4HANA as value help in the purchases and hide some fields.
-
-1. Go back to the Storyboard.
-
-2. elect the **Purchases UI** and open it in the **Page Map**.
-
-* To see which is the Purchases UI, move mouse pointer over the UI to extend the displayed name.
-
-![](vx_images/132840397831215.jpg)
-
-
-3. We want to modify the **Object page**. Therefore select the **edit** icon
-
-![](vx_images/432150496028276.jpg)
-
-
-4. In the Sections, expand **General Information** then expand **Form** and then expand **Fields**.
-* Afterwards it will look like this:
-![](vx_images/462871169950878.jpg)
-
-> 
-> The reward points are calculated automatically by the logic Joule has created for us.
-> 
-
-5. Delete the **Reward Points** field by pressing the trash bin icon next to it and **Confirm** the deletion.
-
-![](vx_images/566080401342073.jpg)
-
-Instead we want to select the products from S/4HANA for the purchases.
-
-6. Select the field **Selected Product** and change the **Display Type** in the properties on the right side to **Value Help**.
-Set the following:
-
-* Label: **Product**
-* Value Source Entity: **A_ProductBasicText**
-* keep the rest as it is.
-
-7. Select **Apply**
-
-![](vx_images/499141603923593.jpg)
+Redemptions：
+* 显示名称：**兑换**
+* 描述：**管理兑换**
+* 数据源： **customer_loyal_XXXSrv**
+* UI应用类型：**基于模板的响应式应用**
+* UI应用模板：**列表报告页面**
+* 主实体：**兑换**
 
 ---
 
-### Preview
+### 修改购买的UI
+现在我们将修改购买的UI。我们将包括从S/4HANA的产品作为值帮助，并隐藏一些字段。
 
-In this lesson, we’ll review the customer loyalty program application you’ve just built.
+1. 返回到Storyboard。
+2. 点击“购买UI”并在页面映射中打开它。
 
-1. To preview your application, go to the upper-right corner, and select **Run and Debug**.
-![](vx_images/364501825006721.png)
+为了识别哪个是购买UI，请将鼠标指针悬停在UI上以展开显示名称。
+   ![](vx_images/132840397831215.jpg)
 
-2. Select Run customer_loyal_XXX
-![](vx_images/149752164668187.png)
+3. 我们想要修改“对象页面”。因此请选择编辑图标。
+   ![](vx_images/432150496028276.jpg)
 
-3. The application’s preview is displayed.
+4. 在部分中，展开**一般信息**,然后展开**表单**然后再展开**字段**。 
+   后来会像这样：
+   
+![修改后的界面](vx_images/462871169950878.jpg)
 
-![](vx_images/371802368887084.png)
+奖励点数将由Joule生成的逻辑自动计算。
 
-4. Select **Go** and navigate through each of the tiles (**Customers, Purchases. Redemptions**) in the Customer Loyal UI to see the generated data. Please note that in the application Preview not all functions may be available.
+5. 删除“奖励点数”字段，请点击旁边的垃圾桶图标并确认删除。
+   ![](vx_images/566080401342073.jpg)
 
-![](vx_images/222451221840794.png)
+相反，我们希望选择S/4HANA的产品进行购买。
 
-Congratulations! You have successfully built and previewed a CAP application using **SAP Build Code** powered by **Joule copilot**!
+6. 选择字段“选定产品”，并将其显示类型设置为**值帮助**。
+   设置如下：
+   
+    * 标签：**产品**
+    * 值来源实体：**A_ProductBasicText**
+
+7. 点击应用。
+
+   ![](vx_images/499141603923593.jpg)
 
 ---
 
+### 预览
+本课中，我们将审查你刚创建的客户忠诚度计划应用。
+
+1. 若要预览你的应用程序，请前往右上角，选择“运行和调试”。
+   ![](vx_images/364501825006721.png)
+
+2. 选择运行customer_loyal_XXX。
+   ![](vx_images/149752164668187.png)
+
+3. 应用程序的预览将显示出来。
+   ![](vx_images/371802368887084.png)
+
+4. 点击“开始”并浏览每个功能图块（**顾客、购买和兑换**）以查看生成的数据。请注意，在应用程序预览中，可能并非所有功能都可用。
+   ![](vx_images/222451221840794.png)
+
+恭喜你！你已经成功地使用**SAP Build Code**和Joule副驾构建并预览了一个CAP应用！
+
+---
