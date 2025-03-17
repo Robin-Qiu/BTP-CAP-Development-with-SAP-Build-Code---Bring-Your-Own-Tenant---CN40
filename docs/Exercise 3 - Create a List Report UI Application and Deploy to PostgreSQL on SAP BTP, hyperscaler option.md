@@ -188,50 +188,43 @@ UI应用向导打开。<br>
 
 #### 从事件的标题更新紧急状况
 
-在Storyboard中选择处理器，并点击“以图形建模器打开”。
-CDS图形建模器打开。
+1. 在 **srv** 文件夹下创建 **service.js** 文件
 
-选择**Incidents**实体，点击“添加逻辑”图标。   
-
-![](vx_images/498682644587171.png)
+![](vx_images/103624043377661.png)   
 
 
-“添加应用逻辑”对话框打开。
-在对话框中的**服务实体字段**,确保选择了**ProcessorService.incidents**值。
 
-对于**名称字段**,输入**changeUrgencyDueToSubject**值。
-
-点击“添加”。
-
-![](vx_images/544312663937425.png)
-
-应用逻辑编辑器打开。
-从“配置”标签的**应用逻辑编辑器**,选择如下选项：
-
-在“阶段”部分，选择“之前”。
-
-在“标准事件”部分，选择创建和更新。
-
-点击“打开代码编辑器 > 应用逻辑”。
-
-![](vx_images/28233307900270.png)
-
-应用逻辑处理器文件打开。
-在**'changeUrgencyDueToSubject.js'** 文件中，在注释 "//Your code here" 下添加如下内容：
+2. 添加如下代码进行紧急状态更新
 
 ```
-const incident = request.data;
-if (incident.title?.toLowerCase().includes("urgent")) {
-      incident.urgency = {      
-        code: "H",        
-        descr: "High"        
-      };
+const cds = require('@sap/cds')
+
+class Processor extends cds.ApplicationService{
+    init(){
+        this.before("UPDATE","Incidents", (req)=> this.changeUregencyDueToSubject(req.data));
+        this.before("CREATE","Incidents", (req)=> this.changeUregencyDueToSubject(req.data));
+
+        return super.init();
+    }
+
+    changeUregencyDueToSubject(data){
+        if(data){
+            const incidents = Array.isArray(data) ? data : [data];
+            incidents.forEach((incident) => {
+                if(incident.title?.toLowerCase().includes("urgent")){
+                    incident.urgency = {code:"H", descr:"Hight"};
+                }
+            });
+        }
+    }
+
 }
+module.exports = {Processor}
 ``` 
 
 结果应该是这样的：
 
-![](vx_images/348955230501654.png)
+![](vx_images/296303254726663.png)
 
 我们现在已经完成了配置应用，并且可以预览它了。
 
@@ -289,11 +282,12 @@ if (incident.title?.toLowerCase().includes("urgent")) {
 3. 部署应用。
    
 为了开始部署：  
-从活动栏中，点击任务探索器图标。  
+1. 从活动栏中，点击 Cloud Foundry 图标。  
+2. 登陆 Cloud Foundry 环境
   
-展开“部署”部分，选择**部署incident_managementXXX**，然后点击“运行图标”。
+![](vx_images/288244100475719.png)
 
-![](vx_images/101135592297646.png)
+
 
 构建开始，打开“Cloud Foundry登录和目标编辑器”。
 
@@ -334,78 +328,16 @@ if (incident.title?.toLowerCase().includes("urgent")) {
 - 选择空间。
 - 点击“应用”。
 
-部署开始，并可以在终端中跟踪进度。整个过程需要几分钟的时间才能完成。
+2. 下一步进行项目的构建
+选中 **mta.yaml **文件，右键点击选择 **Build MTA Project**
+![](vx_images/235916188104071.png)
 
-由于默认的数据库为HANA Cloud，如果你没有 HANA Cloud 实例，部署应用时会出现如下的错误信息：
-
-![](vx_images/557884004970729.png)
-
-别担心，我们不会在练习中使用HANA Cloud。
-
-#### 在我们的练习中，我们将修改部署配置文件以切换数据库到 SAP BTP 上的 PostgreSQL（超大规模选项）。
-
-我们来修改部署配置文件，将数据库从HANA Cloud切换到PostgreSQL。以下是具体的步骤：
-
-1. 输入CDS命令以将PostgreSQL添加到 `mta.yaml` 和 `package.json` 文件中：
-
-```bash
-cds add postgres
-```
-
-![](vx_images/202965572065297.png)
-
-这将添加一些包含PostgreSQL的新的配置，具体如下：
-
-![](vx_images/154636051200283.png)
-
-![](vx_images/5535359463020.png)
+构建可能需要几分钟，完成后会显示如下信息，同时在 **mta_archives** 文件夹下会出现新生成的 MTA 文件
+![](vx_images/555004406744072.png)
 
 
-2. 删除HANA Cloud相关的配置。
-
-在 `package.json` 文件的**依赖项部分中删除"hdb" 和 "@cap-js/hana"。
-
-![](vx_images/260812831178296.png)
-
-更改CDS数据库配置。
-
-```json
-"[production]": {
-        "kind": "postgres",
-        "imp": "@cap-js/postgres"
-      },
-```
-
-![](vx_images/501930284917867.png)
-
-在 `mta.yaml` 文件中删除HANA Cloud相关配置。
-
-在**资源部分下，移除“incident_managementXXX-service-db”块**
-
-![](vx_images/503827120304181.png)
-
-删除“incident_managementXXX-db”块。
-![](vx_images/137196439321485.png)
-
-在**模块部分下，删除“incident_managementXXX-db-deployer”块。**
-
-![](vx_images/513280697830624.png)
-
-在“incident_managementXXX-srv”模块中，删除不再需要的资源。
-
-![](vx_images/514576699025954.png)
-
-同时，请检查你订阅的PostgreSQL服务计划，修改“incident_managementXXX-postgres”服务计划部分在 `mta.yaml` 文件中。
-
-![](vx_images/125352626006130.png)
-
-![](vx_images/262191796027685.png)
-
-最后，重新部署应用程序并检查控制台输出。
-
-初始化PostgreSQL数据库可能需要**5-10分钟的时间**，请耐心等待。
-
-![](vx_images/68062669950287.png)
+右键选中 MTA 文件，点击 **Deploy MTA Achive**，部署开始，并可以在终端中跟踪进度。整个过程需要几分钟的时间才能完成。
+![](vx_images/47423068603935.png)
 
 ##### 检查部署后的服务和UI界面
 
