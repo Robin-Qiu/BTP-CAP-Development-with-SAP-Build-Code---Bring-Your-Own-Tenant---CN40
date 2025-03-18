@@ -1,6 +1,8 @@
 <div class="draftWatermark"></div>
 
-# 使用SAP云应用编程（CAP）加速清洁核心扩展的 SAP BTP 动手实验室
+<h1 style="text-align: center;">「SAP 用户成功日」—— SAP BTP [业务技术云平台] 专场 #</h1>
+<h3 style="text-align: center;"> 借助 SAP BTP CAP 加速 Clean Core 扩展开发 </h3>
+
 
 ---
 
@@ -17,7 +19,7 @@
 ## 概述
 
 ### 练习概述
-在本节中，您将学习如何使用SAP Build Code和SAP Business Application Studio在SAP Business Technology Platform（BTP）上快速开发应用。您将学习如何几分钟内构建一个完整功能的CRUD（创建、读取、更新和删除）应用，包括后端服务和UI应用，只需使用可视化编辑器。您将连接应用到SAP S/4HANA API，学习如何轻松切换至代码并在此基础上创建额外的业务逻辑以最终在BTP上一键部署应用。
+在本节中，您将学习如何使用SAP Build Code 或 SAP Business Application Studio在SAP Business Technology Platform（BTP）上快速开发应用。您将学习如何几分钟内构建一个完整功能的CRUD（创建、读取、更新和删除）应用，包括后端服务和UI应用，只需使用可视化编辑器。您将连接应用到SAP S/4HANA API，学习如何轻松切换至代码并在此基础上创建额外的业务逻辑以最终在BTP上一键部署应用。
 
 ![](vx_images/1272923603339.png)
 
@@ -27,10 +29,10 @@
 
 ## 要求
 
-对于错过预研讨会的人，请参阅录制视频和教程以获取规则及准备内容：
-* **录制视频**: https://dam.sap.com/mac/u/a/bUVjThW?rc=10&doi=SAP1142877
-* **教程**: https://dam.sap.com/mac/u/a/AwbECov?rc=10&doi=SAP1142879
-* **设置指南**: https://dam.sap.com/mac/u/a/C5HSPyJ.htm?rc=10&doi=SAP1080426
+用户自备 BTP 环境（租用如下服务：Cloud Foundry Runtime, SAP Business Application Studio 或 SAP Build Code, SAP HANA Cloud 或 PostgreSQL on SAP BTP – hyperscaler option, SAP Build Work Zone - standard edition）
+
+* **【默认】动手练习需要在贵公司的 BTP 开发环境进行**
+* *【可选】申请 [SAP BTP 试用环境](https://www.sap.cn/products/technology-platform/trial.html)*
 
 ## 如何获得支持
 
@@ -39,4 +41,4 @@
 
 ---
 
-**实时练习**: https://robin-qiu.github.io/BTP-CAP-Development-with-SAP-Build-Code---Bring-Your-Own-Tenant/#/
+**SAP Build Code 动手练习（英文）**: https://robin-qiu.github.io/BTP-CAP-Development-with-SAP-Build-Code---Bring-Your-Own-Tenant/#/

@@ -8,13 +8,13 @@
 
 * [简介](/)
 * [练习0 - 开始准备](/Exercise%200%20-%20Getting%20Started%20-%20Preparation.md)
-* [练习1 - 创建新项目并创建数据模型](Exercise%201%20-%20Create%20a%20New%20Project%20and%20Create%20a%20Data%20Model.md)
+* [练习1 - 创建新项目并创建数据模型](Exercise%201%20-%20Create%20a%20%20New%20Project%20and%20Create%20a%20Data%20Model.md)
 * [练习2 - 在您的数据模型中引用SAP S4HANA Cloud服务](Exercise%202%20-%20Refer%20to%20an%20SAP%20S4HANA%20Cloud%20Service%20in%20Your%20Data%20Model.md)
 
 ---
 <br>
 <br>
-
+<!--
 <h2 style="text-align: center;"># 第二天 #</h2>
 
 ---
@@ -38,6 +38,7 @@
 
 * [练习6 - 在CAP中实现角色和授权检查](Exercise%206%20-%20Implement%20Roles%20and%20Authorization%20Checks%20In%20CAP.md) 
 * [练习7 - 与SAP Build Work Zone集成](Exercise%207%20-%20Integrate%20with%20SAP%20Build%20Work%20Zone.md) 
-<!-- * [练习8 - 使用SAP Build Code和Joule copilot创建应用](Exercise%208%20-%20Create%20App%20with%20SAP%20Build%20Code%20and%20Joule%20copilot.md) 
+[练习8 - 使用SAP Build Code和Joule copilot创建应用](Exercise%208%20-%20Create%20App%20with%20SAP%20Build%20Code%20and%20Joule%20copilot.md) 
+
 -->
 ---
