@@ -55,13 +55,13 @@
 
 **新的对话框出现。**
 
-1. 从目标实体下拉列表中选择**API_BUSINESS_PARTNER-A_BusinessPartner**。
-1. 将建议的属性名称改为**customer**。
-1. 确保所有其他建议（Association和To-One）不变，并点击“创建”。
+a. 从目标实体下拉列表中选择**API_BUSINESS_PARTNER-A_BusinessPartner**。
+b. 将建议的属性名称改为**customer**。
+c. 确保所有其他建议（Association和To-One）不变，并点击“创建”。
 
 ![](vx_images/518014651964712.png)
 
-4. 此时，你可以看到最后的数据模型：
+6. 此时，你可以看到最后的数据模型：
 ![](vx_images/397136985993171.png)
 
 ## 总结
@@ -70,7 +70,7 @@
 
 ---
 
-### 添加示例数据
+#### 添加示例数据
 
 我们现在将使用一些示例数据填充我们的数据模型以便测试我们的服务。请注意，尽管名为示例数据，其实它有两种类型：
 - 固定值，是应用程序的一部分，并应该在部署时一同部署。示例：如果没有固定的一套紧急程度，则使用固定的值。
@@ -98,7 +98,7 @@ H,High,High
 
 3. 现在我们将从一个文件导入数据至**A_BusinessPartner**实体。
 
-4. 打开 `ADOPTION_LAB_API_BUSINESS_PARTNER-A_BusinessPartner.csv`，使用本地文本编辑器。
+ 打开 `ADOPTION_LAB_API_BUSINESS_PARTNER-A_BusinessPartner.csv`，使用本地文本编辑器。
 将以下内容添加到文件中并保存：
 ```
 BusinessPartner,FirstName,LastName
@@ -169,7 +169,7 @@ ID,incidents_ID,timestamp,author,message
 
 
 
-4. 从工具栏中点击“添加实体”并选择“Entity1”。
+4. 从工具栏中点击“添加投影”并选择“Projection1”。
 
 **新投影对话框打开**
 
@@ -196,8 +196,8 @@ ID,incidents_ID,timestamp,author,message
 选择API_Busniess_Partner.A_BusinessPartner实体，清除“启用草稿编辑”复选框（如果未清除），并点击确定。
 A_BusinessPartner实体出现在CDS图形建模器中。
 
-1. 点击 **Add Projection** 图标。
-3. 清除 **all properties** 复选框，选择一下属性:
+I. 点击 **Add Projection** 图标。
+II. 清除 **all properties** 复选框，选择一下属性:
    
    a. BusinessPartner
     
