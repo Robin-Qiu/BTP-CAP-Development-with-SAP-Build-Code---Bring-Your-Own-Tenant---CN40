@@ -501,7 +501,14 @@ build-parameters:
         - npx cds build --production
 
 ```
-![](vx_images/171794188190720.png)
+![](vx_images/38827847636772.png)
+3. 运行下面的命令
+
+    ```
+    npm install
+    ```
+   ![](vx_images/408825501308227.png)
+    
 
 2. 下一步进行项目的构建
 选中 **mta.yaml **文件，右键点击选择 **Build MTA Project**
