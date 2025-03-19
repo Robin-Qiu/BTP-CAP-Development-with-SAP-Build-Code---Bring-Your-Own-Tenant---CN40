@@ -14,13 +14,15 @@
 ---
 <br>
 <br>
-<!--
+
 <h2 style="text-align: center;"># 第二天 #</h2>
 
 ---
 
-* [练习3 - 创建列表报告UI应用，并部署到SAP BTP上的PostgreSQL](Exercise%203%20-%20Create%20a%20List%20Report%20UI%20Application%20and%20Deploy%20to%20PostgreSQL%20on%20SAP%20BTP,%20hyperscaler%20option.md)
+* [练习3 - 创建列表报告UI应用，并部署到SAP BTP上的 HANA Cloud / PostgreSQL](Exercise%203%20-%20Create%20a%20List%20Report%20UI%20Application%20and%20Deploy%20to%20PostgreSQL%20on%20SAP%20BTP,%20hyperscaler%20option.md)
 * [练习4 - 使用UI适配增强Fiori Elements](Exercise%204%20-%20Enhance%20Fiori%20Elements%20with%20UI%20Adaption)
+
+<!--
 * [练习5 - 向应用添加单元测试](Exercise%205%20-%20Add%20Unit%20Test%20to%20the%20Application.md)
 
 
@@ -28,6 +30,7 @@
 <br>
 
 ---
+
 
 <br>
 <br>
