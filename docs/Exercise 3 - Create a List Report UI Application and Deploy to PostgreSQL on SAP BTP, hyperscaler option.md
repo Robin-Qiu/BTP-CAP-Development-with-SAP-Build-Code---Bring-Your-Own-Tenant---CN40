@@ -8,12 +8,12 @@
 
 ## 创建一个新的UI应用
 
-回到SAP Business Application Studio中的**Storyboard**标签页。<br>
+1. 回到SAP Business Application Studio中的**Storyboard**标签页。<br>
 在**UI Applications**标签页中点击+(添加UI)按钮。<br>
 UI应用向导打开。<br>
 ![](vx_images/57105181545720.png)
 
-对于**UI应用模板**,点击**列表报告页面**图标，然后点击**下一步**。
+2. 对于**UI应用模板**,点击**列表报告页面**图标，然后点击**下一步**。
 
 ![](vx_images/207012670724601.png)
 
@@ -33,7 +33,7 @@ UI应用向导打开。<br>
 
 
 
-在**Project Attributes**步骤中，填写如下内容：
+3. 在**Project Attributes**步骤中，填写如下内容：
 
 在**Module name**文本框内输入**incidents**。<br>
 从**Application title**文本框内输入**Incidents**。<br>
@@ -41,7 +41,7 @@ UI应用向导打开。<br>
 
 ![](vx_images/345945534521262.png)
 
-在**Deployment Configuration**步骤中，填写如下内容：
+4. 在**Deployment Configuration**步骤中，填写如下内容：
 
 从**Destination name**下拉列表选择**ADOPTION_LAB_API_BUSINESS_PARTNER - https://my300047.s4hana.ondemand.com/sap/opu/odata/sap/API_BUSINESS_PARTNER**。<br>
 点击**Finish**。
@@ -49,7 +49,7 @@ UI应用向导打开。<br>
 ![](vx_images/465524666815605.png)
 
 
-就这样，你只需四步就创建了一个完整的UI应用。几秒钟后，新的UI应用在**Storyboard**标签页的**UI Applications**图标中显示。<br>
+5. 就这样，你只需四步就创建了一个完整的UI应用。几秒钟后，新的UI应用在**Storyboard**标签页的**UI Applications**图标中显示。<br>
 几秒钟后，页面映射编辑器从侧面弹出，显示为UI应用生成的页面。
 
 ![](vx_images/272993643016023.png)
@@ -61,33 +61,33 @@ UI应用向导打开。<br>
 
 ## 调整列表页面的UI应用
 
-点击“Open in Page Map”进行页面设计
+1. 点击“Open in Page Map”进行页面设计
 ![](vx_images/376636513485503.png)
 
-从页面映射编辑器选择**列表报告**图标，点击配置页面的铅笔图标。
+2. 从页面映射编辑器选择**列表报告**图标，点击配置页面的铅笔图标。
 
 ![](vx_images/242990500434987.png)
 
-你现在可以看到这个页面的详细信息。<br>
+3. 你现在可以看到这个页面的详细信息。<br>
 展开**表格**部分下的**列**，查看服务实体的属性。它应该看起来像下面这样：
 
 ![](vx_images/20542858667481.png)
 
-点击**urgency_code**，并在右侧进行如下更新：
+4. 点击**urgency_code**，并在右侧进行如下更新：
 
-1. 将**标签**改为**紧急程度**并点击回车，让它看起来更好。
-2. 从**文本**下拉列表选择**urgency/descr**。
-3. 从**文本布局**下拉列表选择**仅显示文本**。这将配置列表显示紧急程度的描述而不是代码。
+a. 将**标签**改为**紧急程度**并点击回车，让它看起来更好。
+b. 从**文本**下拉列表选择**urgency/descr**。
+c. 从**文本布局**下拉列表选择**仅显示文本**。这将配置列表显示紧急程度的描述而不是代码。
 ![](vx_images/149724683967032.png)
 
 
-在**表格 > 列**下选择**customer_BusinessPartner**。
+5. 在**表格 > 列**下选择**customer_BusinessPartner**。
 
 将**标签**改为**客户**并按回车键让它看起来更好。
 
 ![](vx_images/21765828852106.png)
 
-选择**表格**。
+6. 选择**表格**。
 从**初始加载**下拉列表选择**启用**。
 
 这将使数据的初始加载有效，因此无需点击**Go**按钮来加载它。
@@ -96,17 +96,17 @@ UI应用向导打开。<br>
 
 ## 调整UI对象页面并添加帮助值
 
-点击编辑器顶部的**Page Map**回到页面映射。<br>
+1. 点击编辑器顶部的**Page Map**回到页面映射。<br>
 选择**对象页面**图标，并点击配置页面的铅笔图标。
 
 ![](vx_images/202052096065386.png)
 
-选择**头部**部分。 <br>
+2. 选择**头部**部分。 <br>
 从**标题**下拉列表选择**title**，这样事件的标题就可以出现在头部。
 
 ![](vx_images/288206608013270.png)
 
-在**部分**下，选择**General Information**来更新紧急程度和客户字段的标签及帮助值。
+3. 在**部分**下，选择**General Information**来更新紧急程度和客户字段的标签及帮助值。
 
 从**一般信息 > 表单 > 字段**选择**urgency_code**。<br>
 
@@ -117,7 +117,7 @@ UI应用向导打开。<br>
 
 ![](vx_images/331057382628928.png)
 
-“定义帮助值属性”对话框打开。
+4. “定义帮助值属性”对话框打开。
 
 在**标签**字段中输入**紧急程度**。<br>
 从**值描述属性**下拉列表选择**descr**。<br>
@@ -127,7 +127,7 @@ UI应用向导打开。<br>
 
 ![](vx_images/255574517586968.png)
 
-接下来我们将对客户列进行类似的步骤处理。<br>
+5. 接下来我们将对客户列进行类似的步骤处理。<br>
 这一次我们不再创建下拉列表而是帮助值，因为我们预计从后台获取的客户列表过大无法在下拉列表中展示。
 
 从**General Information > Form > Fields**,选择 **customer_BusinessPartner**。<br>
@@ -139,7 +139,7 @@ UI应用向导打开。<br>
 
 ![](vx_images/433317120809147.png)
 
-**Define Value Help Properties对话框弹出。**
+6. **Define Value Help Properties对话框弹出。**
 在**显示为下拉列表**选项旁打勾,然后点击**添加列**。
 从**属性**下拉菜单中选择 **FirstName**。 <br>  
 点击 **添加列**。<br>
@@ -150,13 +150,13 @@ UI应用向导打开。<br>
 
 ## 添加对象页面的对话部分
 
-现在我们将添加“对话”部分到“一般信息”的旁边。
+1. 现在我们将添加“对话”部分到“一般信息”的旁边。
 
 选择**部分**,点击+ (创建部分),并选择**添加表格部分**。<br>
 
 ![](vx_images/577997836318943.png)
 
-“添加表格部分”对话框打开。
+2. “添加表格部分”对话框打开。
 
 在**标签**字段中输入“对话”，并点击“Enter”。<br>
 从“值源”下拉列表选择**conversations**。<br> 
@@ -164,11 +164,11 @@ UI应用向导打开。<br>
 
 ![](vx_images/355352459118258.png)
 
-选择**对话 > 表格 > 列**,点击加号图标，然后选择“添加基本列”。
+3. 选择**对话 > 表格 > 列**,点击加号图标，然后选择“添加基本列”。
 
 ![](vx_images/207562894832661.png)
 
-“添加基本列”对话框打开。
+4. “添加基本列”对话框打开。
 从**VColumns下拉列表中选择**author**, **timestamp**, 和 **message**。<br>
 点击“添加”。
 
@@ -327,6 +327,179 @@ module.exports = {Processor}
 - 选择机构。
 - 选择空间。
 - 点击“应用”。
+
+2. 点击右上角命令行面板图标
+![](vx_images/54715979495035.png)
+运行下面的命令，添加 SAP Build Work Zone, standard edition 的配置
+
+```
+cds add workzone-standard
+```
+![](vx_images/571643913288277.png)
+
+
+2. mta.yaml会自动被更新
+```
+_schema-version: 3.3.0
+ID: incident_management000
+description: A simple CAP project.
+version: 1.0.0
+modules:
+  - name: incident_management000-srv
+    type: nodejs
+    path: gen/srv
+    requires:
+      - name: incident_management000-auth
+      - name: incident_management000-db
+      - name: incident_management000-destination
+    provides:
+      - name: srv-api
+        properties:
+          srv-url: ${default-url}
+    parameters:
+      buildpack: nodejs_buildpack
+      instances: 1
+    build-parameters:
+      builder: npm-ci
+  - name: incident_management000-db-deployer
+    type: hdb
+    path: gen/db
+    requires:
+      - name: incident_management000-db
+    parameters:
+      buildpack: nodejs_buildpack
+  - name: incident_management000-app-content
+    type: com.sap.application.content
+    path: .
+    requires:
+      - name: incident_management000-html5-repo-host
+        parameters:
+          content-target: true
+    build-parameters:
+      build-result: resources
+      requires:
+        - artifacts:
+            - incidents.zip
+          name: incidents
+          target-path: resources/
+  - name: incidents
+    type: html5
+    path: app/incidents
+    build-parameters:
+      build-result: dist
+      builder: custom
+      commands:
+        - npm install
+        - npm run build:cf
+        - npm ci
+        - npm run build
+      supported-platforms:
+        []
+
+  - name: incident_management000-app-deployer
+    type: com.sap.application.content
+    path: .
+    requires:
+      - name: incident_management000-html5-repo-host
+        parameters:
+          content-target: true
+    build-parameters:
+      build-result: app/
+      requires:
+        - name: incidents
+          artifacts:
+            - incidents.zip
+          target-path: resources/
+
+  - name: incident_management000-destinations
+    type: com.sap.application.content
+    requires:
+      - name: incident_management000-auth
+        parameters:
+          service-key:
+            name: incident_management000-auth-key
+      - name: incident_management000-html5-repo-host
+        parameters:
+          service-key:
+            name: incident_management000-html5-repo-host-key
+      - name: srv-api
+      - name: incident_management000-destination
+        parameters:
+          content-target: true
+    build-parameters:
+      no-source: true
+    parameters:
+      content:
+        instance:
+          existing_destinations_policy: update
+          destinations:
+            - Name: incident_management000-html5-repository
+              ServiceInstanceName: incident_management000-html5-repo-host
+              ServiceKeyName: incident_management000-html5-repo-host-key
+              sap.cloud.service: incident_management000.service
+            - Name: incident_management000-auth
+              Authentication: OAuth2UserTokenExchange
+              ServiceInstanceName: incident_management000-auth
+              ServiceKeyName: incident_management000-auth-key
+              sap.cloud.service: incident_management000.service
+resources:
+  - name: incident_management000-auth
+    type: org.cloudfoundry.managed-service
+    parameters:
+      config:
+        tenant-mode: dedicated
+        xsappname: incident_management000-${space}
+      path: ./xs-security.json
+      service: xsuaa
+      service-plan: application
+  - name: incident_management000-db
+    type: com.sap.xs.hdi-container
+    parameters:
+      service: hana
+      service-plan: hdi-shared
+  - name: incident_management000-destination
+    type: org.cloudfoundry.managed-service
+    parameters:
+      config:
+        HTML5Runtime_enabled: false
+        init_data:
+          instance:
+            destinations:
+              - Authentication: NoAuthentication
+                Name: ui5
+                ProxyType: Internet
+                Type: HTTP
+                URL: https://ui5.sap.com
+              - Authentication: NoAuthentication
+                HTML5.DynamicDestination: true
+                HTML5.ForwardAuthToken: true
+                Name: incident_management000-srv-api
+                ProxyType: Internet
+                Type: HTTP
+                URL: ~{srv-api/srv-url}
+            existing_destinations_policy: update
+      service: destination
+      service-plan: lite
+    requires:
+      - name: srv-api
+  - name: incident_management000-html5-repo-host
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: html5-apps-repo
+      service-name: incident_management000-html5-repo-host
+      service-plan: app-host
+parameters:
+  deploy_mode: html5-repo
+  enable-parallel-deployments: true
+build-parameters:
+  before-all:
+    - builder: custom
+      commands:
+        - npm ci
+        - npx cds build --production
+
+```
+![](vx_images/171794188190720.png)
 
 2. 下一步进行项目的构建
 选中 **mta.yaml **文件，右键点击选择 **Build MTA Project**
