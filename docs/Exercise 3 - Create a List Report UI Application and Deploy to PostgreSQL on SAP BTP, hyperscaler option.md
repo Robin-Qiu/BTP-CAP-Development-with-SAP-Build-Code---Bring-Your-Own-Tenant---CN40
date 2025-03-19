@@ -329,6 +329,7 @@ module.exports = {Processor}
 - 点击“应用”。
 
 2. 点击右上角命令行面板图标
+
 ![](vx_images/54715979495035.png)
 运行下面的命令，添加 SAP Build Work Zone, standard edition 的配置
 
@@ -339,6 +340,7 @@ cds add workzone-standard
 
 
 2. mta.yaml会自动被更新
+
 ```
 _schema-version: 3.3.0
 ID: incident_management000
